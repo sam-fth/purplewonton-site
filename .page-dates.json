@@ -1,10 +1,10 @@
 {
  "": {
-  "hash": "a31e7d1d2afa8e8eae555cba85d0da8d99a12f9221648a39d9946cd325493af2",
+  "hash": "e6b4fd0e1f084201d4acec1f4237431239613bad349e58c91a4390c41b9faa63",
   "date": "2026-10-23"
  },
  "duptaboff/": {
-  "hash": "ce8442856f960232ebfc61158d1b47dca2d4f1dac4244a1bf57aae6938a86801",
+  "hash": "18c57c7d03a77bdf9948ebbfbc7eef1b93c4ec3a084c26b9ab5707f47556c506",
   "date": "2026-10-23"
  },
  "support/": {
@@ -20,11 +20,11 @@
   "date": "2026-10-24"
  },
  "de/": {
-  "hash": "96571eb4b07313a2e04292b4f7a768d9f59e6950d5cfa0cea57488156b0d3234",
+  "hash": "9eb89a260eb79d785b0856a2d7064a903579ed787732250c8e39631ce828cb36",
   "date": "2026-10-23"
  },
  "de/duptaboff/": {
-  "hash": "309c306b395a64b1d32074f3eb80cfa792457f73521e0289f0f6920c50c39d61",
+  "hash": "dca51a17dd37a917dc3df5055e8a7d89e93a1cbd653ab1c90e3f27e7e1154bbb",
   "date": "2026-10-23"
  },
  "de/support/": {
@@ -32,11 +32,11 @@
   "date": "2026-10-24"
  },
  "fr/": {
-  "hash": "247dec09873408f76e7a46bd89441b11c07af909cbef43165445b35681d09a81",
+  "hash": "21d646f4615edf83cf60e67f0dbbd3a3d72b83578a10d73d18724c421fee9f1f",
   "date": "2026-10-23"
  },
  "fr/duptaboff/": {
-  "hash": "fabd5721aed71dff0e3a8d39e30d49a119fb32a2237ac43aaf9f1423bcf887fb",
+  "hash": "3cce8d030e1702fb52296f92f6a7f9ce55241441cea741166508f29df77e79f4",
   "date": "2026-10-23"
  },
  "fr/support/": {
@@ -44,11 +44,11 @@
   "date": "2026-10-24"
  },
  "ja/": {
-  "hash": "58617b69118a2dfad3f67433ee24a2d06caef9259c73cabc1fc95ebc6c27d99f",
+  "hash": "9523a0f3a283fc173622e9763351acad68e43b85dc20b0f32d066311c5979655",
   "date": "2026-10-23"
  },
  "ja/duptaboff/": {
-  "hash": "71e57b84eb40c4e2311099f089e20b489ea33f671b3060c9b2c70432801c43e8",
+  "hash": "e5982bd582df58f6fce5c1cf3ac679e2145d0325841b1e334c07f5c0dc90836d",
   "date": "2026-10-23"
  },
  "ja/support/": {
@@ -56,11 +56,11 @@
   "date": "2026-10-24"
  },
  "es/": {
-  "hash": "ecc7c292714304cd686af3f5816e5ca277274016d6861a8f16341040a8935902",
+  "hash": "ed192c1c7729980aa52d4e8adca3c7211063effbefb6e51836c66bac5dbb96e9",
   "date": "2026-10-23"
  },
  "es/duptaboff/": {
-  "hash": "1a5ed0250e9558cef66b3d64045fcd759e32e807b87d06deb9912f2e447f1ce8",
+  "hash": "590ef007bab2ac95974423a2f0adcb7b2411a4552be854c9851f2c0392483a06",
   "date": "2026-10-23"
  },
  "es/support/": {
