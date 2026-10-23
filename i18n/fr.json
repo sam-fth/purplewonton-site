@@ -62,7 +62,7 @@
   "f1_p": "Le chiffre sur l’icône DupTabOff indique combien de doublons sont ouverts. Ouvrez la fenêtre : chaque page en double est listée, avec la copie conservée et celles qui seront fermées.",
   "f1_pts": ["Considère http et https, www, les barres obliques finales et les codes de suivi comme une même page", "Clic droit sur n’importe quelle page, puis « Supprimer les doublons de cette page »", "Annuler rouvre les onglets que vous venez de fermer {pro}"],
   "f1_alt": "Fenêtre DupTabOff avec des onglets en double : une page ouverte quatre fois, une copie conservée, trois fermées",
-  "f2_h": "Empêchez les doublons de s’ouvrir {pro}",
+  "f2_h": "Empêchez les onglets en double de s’ouvrir {pro}",
   "f2_p": "Cliquez sur un lien ou un favori vers une page déjà ouverte : DupTabOff vous amène sur cet onglet au lieu d’en ouvrir une nouvelle copie. Les liens ouverts en arrière-plan sont fermés discrètement, pour ne jamais vous détourner de votre lecture.",
   "f2_pts": ["Ne touche jamais aux fenêtres de connexion, aux résultats de formulaires ni aux onglets dupliqués volontairement", "Les pages bloquées récemment sont listées avec un bouton Rouvrir"],
   "f2_alt": "Mode prévention activé, avec la liste des doublons bloqués récemment et des boutons Rouvrir",
@@ -96,7 +96,7 @@
   "pro_headline": [
     "<strong>Supprimez tous les doublons en un clic</strong> : ni limite de 200, ni plafond de 10 par clic",
     "<strong>Vérifiez toutes les fenêtres à la fois</strong>, y compris les fenêtres privées si vous l’autorisez",
-    "<strong>Empêchez les doublons de s’ouvrir</strong>, y compris les adresses que vous tapez",
+    "<strong>Empêchez les onglets en double de s’ouvrir</strong>, y compris les adresses que vous tapez",
     "<strong>Annulez</strong> une suppression : les onglets reviennent exactement à leur place",
     "<strong>Marquage en couleur</strong> : chaque ensemble de doublons dans sa propre couleur"
   ],

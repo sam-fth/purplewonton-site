@@ -62,7 +62,7 @@
   "f1_p": "Die Zahl am DupTabOff-Symbol zeigt, wie viele Duplikate offen sind. Im Fenster wird jede doppelte Seite aufgelistet, mit der Kopie, die bleibt, und den Kopien, die geschlossen werden.",
   "f1_pts": ["Behandelt http und https, www, Schrägstriche am Ende und Tracking-Codes als dieselbe Seite", "Rechtsklick auf eine Seite und „Duplikate dieser Seite entfernen“ wählen", "Rückgängig holt die gerade geschlossenen Tabs zurück {pro}"],
   "f1_alt": "DupTabOff-Fenster mit doppelten Tabs: eine Seite ist viermal geöffnet, eine Kopie bleibt, drei werden geschlossen",
-  "f2_h": "Duplikate verhindern, bevor sie sich öffnen {pro}",
+  "f2_h": "Doppelte Tabs verhindern, bevor sie sich öffnen {pro}",
   "f2_p": "Klicken Sie auf einen Link oder ein Lesezeichen zu einer bereits geöffneten Seite, bringt DupTabOff Sie zu diesem Tab, statt eine weitere Kopie zu öffnen. Im Hintergrund geöffnete Links werden still geschlossen – Sie werden nie aus dem gerissen, was Sie gerade lesen.",
   "f2_pts": ["Lässt Anmeldefenster, Formularergebnisse und bewusst duplizierte Tabs immer in Ruhe", "Zuletzt verhinderte Seiten werden mit einer Schaltfläche „Erneut öffnen“ aufgelistet"],
   "f2_alt": "Vorbeugemodus eingeschaltet, mit einer Liste zuletzt verhinderter Duplikate und Schaltflächen zum erneuten Öffnen",
@@ -96,7 +96,7 @@
   "pro_headline": [
     "<strong>Alle Duplikate mit einem Klick entfernen</strong>: kein 200er-Limit, keine Grenze von 10 pro Klick",
     "<strong>Alle Fenster auf einmal prüfen</strong>, auch private Fenster, wenn Sie es erlauben",
-    "<strong>Duplikate verhindern, bevor sie sich öffnen</strong> – auch bei eingetippten Adressen",
+    "<strong>Doppelte Tabs verhindern, bevor sie sich öffnen</strong> – auch bei eingetippten Adressen",
     "<strong>Rückgängig</strong>: Tabs kommen genau dorthin zurück, wo sie waren",
     "<strong>Farbmarkierungen</strong>: jede Gruppe von Duplikaten in eigener Farbe"
   ],

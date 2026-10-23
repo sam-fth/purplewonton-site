@@ -79,7 +79,7 @@
     "Undo brings back the tabs you just removed {pro}"
   ],
   "f1_alt": "DupTabOff popup showing duplicate tabs, with one page open four times: one copy stays, three close",
-  "f2_h": "Stop duplicates before they open {pro}",
+  "f2_h": "Stop duplicate tabs before they open {pro}",
   "f2_p": "Click a link or bookmark to a page you already have open, and DupTabOff takes you to that tab instead of opening another copy. Links you open in the background close quietly, so you're never pulled away from what you're reading.",
   "f2_pts": [
     "Never touches sign-in windows, form results or tabs you duplicated on purpose",
@@ -123,7 +123,7 @@
   "pro_headline": [
     "<strong>Remove every duplicate in one click</strong>: no 200 limit, no 10-per-click cap",
     "<strong>Check all windows at once</strong>, plus private windows if you allow it",
-    "<strong>Stop duplicates before they open</strong>, including addresses you type",
+    "<strong>Stop duplicate tabs before they open</strong>, including addresses you type",
     "<strong>Undo</strong> a removal, with tabs put back exactly where they were",
     "<strong>Colour marks</strong>: each set of duplicates in its own colour"
   ],
