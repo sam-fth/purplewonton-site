@@ -522,7 +522,7 @@ page('404.html', 'Page not found: Purple Wonton', 'This page does not exist.',
 <p><a class="btn" href="/">Go to the home page</a></p></section>''')
 
 with open(os.path.join(ROOT, 'CNAME'), 'w') as f:
-    f.write('www.purplewonton.com\n')  # tells GitHub Pages which domain this site lives on
+    f.write('www.purplewonton.com')  # (no line break, matching GitHub's own copy) tells GitHub Pages which domain this site lives on
 with open(os.path.join(ROOT, 'robots.txt'), 'w') as f:
     f.write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
 # SITEMAP for Google, with the date each page last changed.
