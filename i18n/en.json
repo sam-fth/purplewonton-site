@@ -1,0 +1,191 @@
+{
+  "_about": "English wording for every page. Each other language file has the same keys. Words in {curly brackets} are filled in by build.py (price, email address, links): keep them exactly as they are. Simple HTML tags like <strong>, <b> and <a> may appear and must be kept too.",
+  "lang_name": "English",
+  "locale": "en_US",
+  "skip": "Skip to content",
+  "nav_products": "Products",
+  "nav_support": "Support",
+  "lang_label": "Language",
+  "footer_copy": "© {year} Purple Wonton, Bengaluru, India",
+  "footer_privacy": "Privacy policy",
+  "footer_terms": "Terms",
+  "legal_note": "",
+  "store_soon": "Coming soon to the Chrome Web Store",
+  "store_add": "Add to Chrome, it's free",
+  "pro_tag": "Pro",
+  "home_title": "Purple Wonton: software, AI and automation, made in Bengaluru",
+  "home_desc": "Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our first product: DupTabOff for Chrome.",
+  "hero_h1": "Software, AI and automation, engineered with care.",
+  "hero_lead": "Purple Wonton is a technology studio in Bengaluru. We design and build modern software products that take repetitive work off your hands: fast, private by design, and tested in real browsers before they reach you.",
+  "btn_products": "See our products",
+  "btn_talk": "Talk to us",
+  "logo_alt": "Purple Wonton: software, AI, automation",
+  "build_h2": "What we build",
+  "cap_soft_h": "Software",
+  "cap_soft_p": "Browser extensions and apps that feel instant and stay out of your way, built on current web standards and kept working on older devices too.",
+  "cap_ai_h": "AI",
+  "cap_ai_p": "Practical intelligence inside everyday tools: features that understand what you're doing and save real minutes, not demos.",
+  "cap_auto_h": "Automation",
+  "cap_auto_p": "Repetitive clicks turned into one action, or none at all, so the computer does the chores and you do the thinking.",
+  "products_h2": "Products",
+  "products_lead": "Each Purple Wonton product does one job very well, keeps your data on your own device, and is priced fairly, with no subscriptions you didn't ask for.",
+  "more_products": "More products are in the works. Ideas for what we should build next are welcome at {email_link}.",
+  "how_h2": "How we work",
+  "how": [
+    [
+      "Private by design",
+      "Our products work on your device. No ads, no tracking, and nothing about you is sold or shared."
+    ],
+    [
+      "Tested like it matters",
+      "Every release runs hundreds of automated checks, including tests that click through the product in a real browser."
+    ],
+    [
+      "Fair, clear pricing",
+      "A useful free version, and one-time Lifetime upgrades. You always know what you pay and what you get."
+    ],
+    [
+      "Built to last",
+      "Clean, well-documented code that supports older computers and browsers, so tools keep working for years."
+    ]
+  ],
+  "contact_h2": "Have a question or an idea?",
+  "contact_p": "Write to {email_link}. We read every message.",
+  "org_desc": "Purple Wonton is a technology studio in Bengaluru, India, building software, AI and automation products.",
+  "dup_kind": "Chrome extension",
+  "dup_pitch": "Too many tabs, and three of them are the same page? DupTabOff finds every page you have open more than once and removes the extra copies in one click, and with Pro stops duplicates before they open.",
+  "dup_price": "Free, with Lifetime Pro for {price} once",
+  "dup_shot_alt": "The DupTabOff popup listing duplicate tabs and which copy of each page stays open",
+  "explore": "Explore {name}",
+  "dt_title": "DupTabOff: remove duplicate tabs in one click",
+  "dt_desc": "DupTabOff finds every page you have open more than once and removes the extra copies in one click. Free, with Lifetime Pro for {price} once.",
+  "dt_for_chrome": "DupTabOff for Chrome",
+  "dt_h1": "Same page open three times? Keep one.",
+  "dt_lead": "DupTabOff finds every page you have open more than once, shows which copy stays, and removes the rest in one click. Pinned tabs, music and the tab you're reading are never touched.",
+  "btn_compare": "Free vs Lifetime Pro",
+  "strip_label": "Three copies of the same page fold into one",
+  "strip_tabs": [
+    "Inbox (12)",
+    "Flight options to Goa",
+    "Q3 report draft",
+    "Bengaluru weather"
+  ],
+  "strip_caption": "Same page, open three times. DupTabOff closes the extra copies and <b>keeps the one you need</b>, without moving any other tab.",
+  "f1_h": "See which copy stays before anything closes",
+  "f1_p": "The number on the DupTabOff icon tells you how many duplicates are open. Open the popup and each duplicated page is listed, with the copy that stays and the copies that close.",
+  "f1_pts": [
+    "Treats http and https, www, trailing slashes and tracking codes as the same page",
+    "Right-click any page and choose \"Remove duplicates of this page\"",
+    "Undo brings back the tabs you just removed {pro}"
+  ],
+  "f1_alt": "DupTabOff popup showing duplicate tabs, with one page open four times: one copy stays, three close",
+  "f2_h": "Stop duplicates before they open {pro}",
+  "f2_p": "Click a link or bookmark to a page you already have open, and DupTabOff takes you to that tab instead of opening another copy. Links you open in the background close quietly, so you're never pulled away from what you're reading.",
+  "f2_pts": [
+    "Never touches sign-in windows, form results or tabs you duplicated on purpose",
+    "Recently stopped pages are listed with a Reopen button"
+  ],
+  "f2_alt": "Prevention mode switched on, with a list of recently stopped duplicate pages and Reopen buttons",
+  "f3_h": "Find any tab in a second",
+  "f3_p": "Press / in the popup and start typing. Matching tabs from every window appear as you type, and Enter takes you straight there. Free for everyone.",
+  "f3_alt": "A search in the popup listing matching tabs across windows",
+  "f4_h": "Snooze a tab until you need it {pro}",
+  "f4_p": "Close a tab now and have it come back by itself later today, this evening, tomorrow morning, next Monday or any time you pick. If Chrome is closed then, it comes back the next time you open it.",
+  "f4_alt": "Snooze screen with later today, this evening, tomorrow morning and next Monday, and two snoozed tabs",
+  "f5_h": "Never lose a set of tabs again {pro}",
+  "f5_p": "Save your open tabs as a named session, file it in a folder, add a note, and reopen it in one click with pinned tabs and tab groups back in place. Automatic backups every 30 minutes protect you from crashes.",
+  "f5_pts": [
+    "Share a session as a simple page of links you can send to anyone",
+    "Clean-up tools: close unused tabs, close a whole site, merge windows, sort by site"
+  ],
+  "f5_alt": "Saved sessions grouped into folders, with Restore and Share buttons",
+  "promise_h": "Private by design",
+  "promise_p": "DupTabOff reads your open tabs only inside your browser. It has no ads, no analytics and no account, and your tabs and sessions never leave your computer. Read the <a href=\"{privacy_url}\">privacy policy</a>.",
+  "pricing_h": "Free to use. Lifetime Pro when you want more.",
+  "pricing_lead": "Try every Pro feature free for 7 days, with nothing to pay or cancel.",
+  "free_h": "Free",
+  "free_items": [
+    "Remove duplicates in <strong class=\"limit\">the current window only</strong>",
+    "Your first <strong class=\"limit\">200</strong> removals with no limit, then <strong class=\"limit\">10 per click</strong>",
+    "Duplicate count on the icon, and right-click removal",
+    "Search every open tab, copy all tab links",
+    "Light and dark theme, larger text, keyboard use"
+  ],
+  "missing_label": "Not included in the free version",
+  "free_missing": [
+    "No Undo",
+    "No prevention mode",
+    "No snooze, saved sessions or backups"
+  ],
+  "pro_h": "Lifetime Pro",
+  "pro_price_note": "paid once, no subscription",
+  "india_note": "{india} in India",
+  "pro_headline": [
+    "<strong>Remove every duplicate in one click</strong>: no 200 limit, no 10-per-click cap",
+    "<strong>Check all windows at once</strong>, plus private windows if you allow it",
+    "<strong>Stop duplicates before they open</strong>, including addresses you type",
+    "<strong>Undo</strong> a removal, with tabs put back exactly where they were",
+    "<strong>Colour marks</strong>: each set of duplicates in its own colour"
+  ],
+  "also": "Also included",
+  "pro_more": [
+    "Sleep duplicates to free memory without closing them",
+    "Snooze tabs until later today, tonight, tomorrow, next Monday or a time you pick",
+    "Saved sessions with folders and notes, restored with pinned tabs and groups",
+    "Share a session as a page of links, or copy it as text",
+    "Automatic backups every 30 minutes, keeping the last 24",
+    "Clean-up tools: close unused tabs, close a whole site, merge windows, sort by site",
+    "Sites to leave alone, for pages you keep open twice on purpose",
+    "Keyboard shortcut to remove duplicates from anywhere",
+    "One key works on up to 5 browsers, with all future Pro updates included"
+  ],
+  "faq_h": "Questions",
+  "faq": [
+    [
+      "Will it close my Gmail, Google Docs or other web apps?",
+      "Only real duplicates close. Apps like Gmail use the part of the address after # for different screens, so your inbox and an open email are not treated as copies. Pinned tabs and tabs playing sound are never closed."
+    ],
+    [
+      "Will it mix up the order of my tabs?",
+      "No. DupTabOff never moves a tab when removing duplicates; it only closes the extra copies. The copy you're looking at, a pinned copy, or a copy inside one of your tab groups is the one that stays."
+    ],
+    [
+      "What is the difference between Free and Lifetime Pro?",
+      "The free version removes duplicates in the window you're in: your first 200 with no limit, then up to 10 per click. Lifetime Pro checks every window at once, stops duplicates before they open, and adds Undo, colour marks, snooze, saved sessions and clean-up tools."
+    ],
+    [
+      "Is Lifetime Pro a subscription?",
+      "No. Lifetime Pro is {price}, paid once, with no renewals. One license key works on up to 5 browsers. You can try every Pro feature free for 7 days first, with nothing to cancel."
+    ],
+    [
+      "Does DupTabOff collect my browsing data?",
+      "No. Your tabs are read only inside your browser and nothing about them is sent anywhere. There are no ads, no analytics and no account. The only time DupTabOff goes online is to check a Pro license key with Gumroad, the store that sells Pro."
+    ],
+    [
+      "Which browsers does it work in?",
+      "Chrome 88 or newer on Windows, Mac, Linux and ChromeOS, and Chromium browsers such as Edge, Brave, Opera and Vivaldi. Chrome on phones doesn't support extensions."
+    ],
+    [
+      "Can I get a refund?",
+      "Yes. If Pro doesn't work for you, email {email} within 14 days of buying and we'll refund you."
+    ]
+  ],
+  "faq_more": "More answers on the <a href=\"{support_url}\">support page</a>.",
+  "app_desc": "Removes duplicate tabs in one click. Pro stops duplicates before they open, checks every window, and adds undo, snooze, saved sessions and clean-up tools.",
+  "app_os": "Chrome 88 or newer on Windows, macOS, Linux and ChromeOS",
+  "s_title": "Support: Purple Wonton",
+  "s_desc": "Get help with DupTabOff: contact Purple Wonton, refunds, license keys and common questions.",
+  "s_h1": "Support",
+  "s_lead": "Something not working, or an idea for DupTabOff? Write to us and include which version of Chrome you use. We read every message.",
+  "s_email_h": "Email",
+  "s_email_note": "Inside DupTabOff, the \"?\" button opens the help page, and its Contact button fills in your version numbers for you.",
+  "s_keys_h": "License keys",
+  "s_keys_p": "After buying Lifetime Pro, copy the license key from your Gumroad receipt, open DupTabOff's settings, click \"Enter key\" and paste it. One key works on up to 5 browsers. If a key says it's used on too many browsers, reply to your receipt email and we'll reset it.",
+  "s_refund_h": "Refunds",
+  "s_refund_p": "If Pro doesn't work for you, email us within 14 days of buying and we'll refund you. After 14 days, refunds are at our discretion, and your rights under your country's consumer law always apply.",
+  "s_back_h": "Getting tabs back",
+  "s_back_p": "Chrome itself can reopen recently closed tabs: press Ctrl+Shift+T (Cmd+Shift+T on Mac). With Pro, DupTabOff's Undo button brings back a whole batch in the windows they came from.",
+  "s_common_h": "Common questions",
+  "s_common_p": "See the <a href=\"{pricing_url}\">Free vs Lifetime Pro</a> comparison and the questions at the bottom of the <a href=\"{dt_url}\">DupTabOff page</a>.",
+  "s_lang_note": ""
+}

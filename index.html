@@ -6,6 +6,12 @@
 <title>Purple Wonton: software, AI and automation, made in Bengaluru</title>
 <meta name="description" content="Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our first product: DupTabOff for Chrome.">
 <link rel="canonical" href="https://www.purplewonton.com/">
+<link rel="alternate" hreflang="en" href="https://www.purplewonton.com/">
+<link rel="alternate" hreflang="de" href="https://www.purplewonton.com/de/">
+<link rel="alternate" hreflang="fr" href="https://www.purplewonton.com/fr/">
+<link rel="alternate" hreflang="ja" href="https://www.purplewonton.com/ja/">
+<link rel="alternate" hreflang="es" href="https://www.purplewonton.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.purplewonton.com/">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -14,7 +20,7 @@
 <meta property="og:url" content="https://www.purplewonton.com/">
 <meta property="og:image" content="https://www.purplewonton.com/assets/og-duptaboff.jpg">
 <meta property="og:site_name" content="Purple Wonton">
-<meta property="og:locale" content="en_IN">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#7140e0">
@@ -26,11 +32,23 @@
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href=""><img src="assets/mark.png" width="36" height="36" alt=""><span>Purple Wonton</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="#products" aria-current="page">Products</a>
-      <a href="duptaboff/">DupTabOff</a>
-      <a href="support/">Support</a>
-    </nav>
+    <div class="head-right">
+      <nav class="nav" aria-label="Main">
+        <a href="#products" aria-current="page">Products</a>
+        <a href="duptaboff/">DupTabOff</a>
+        <a href="support/">Support</a>
+      </nav>
+    <details class="lang">
+      <summary aria-label="Language"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8a8.2 8.2 0 1 0 0 16.4 8.2 8.2 0 0 0 0-16.4Zm5.9 7.4h-2.6a13 13 0 0 0-1.1-5 6.6 6.6 0 0 1 3.7 5ZM10 3.4c.7.9 1.5 2.9 1.7 5.8H8.3c.2-2.9 1-4.9 1.7-5.8Zm-2.2.8a13 13 0 0 0-1.1 5H4.1a6.6 6.6 0 0 1 3.7-5Zm-3.7 6.6h2.6a13 13 0 0 0 1.1 5 6.6 6.6 0 0 1-3.7-5Zm5.9 5.8c-.7-.9-1.5-2.9-1.7-5.8h3.4c-.2 2.9-1 4.9-1.7 5.8Zm2.2-.8a13 13 0 0 0 1.1-5h2.6a6.6 6.6 0 0 1-3.7 5Z"/></svg><span>English</span></summary>
+      <ul>
+        <li><a href="" hreflang="en" lang="en" aria-current="true">English</a></li>
+        <li><a href="de/" hreflang="de" lang="de">Deutsch</a></li>
+        <li><a href="fr/" hreflang="fr" lang="fr">Français</a></li>
+        <li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li>
+        <li><a href="es/" hreflang="es" lang="es">Español</a></li>
+      </ul>
+    </details>
+    </div>
   </div>
 </header>
 <main id="main">
@@ -53,25 +71,15 @@
 <section class="wrap capabilities" aria-labelledby="what-we-build">
   <h2 id="what-we-build">What we build</h2>
   <div class="cap-grid">
-    <div class="cap">
-      <h3>Software</h3>
-      <p>Browser extensions and apps that feel instant and stay out of your way, built on current web standards and kept working on older devices too.</p>
-    </div>
-    <div class="cap">
-      <h3>AI</h3>
-      <p>Practical intelligence inside everyday tools: features that understand what you're doing and save real minutes, not demos.</p>
-    </div>
-    <div class="cap">
-      <h3>Automation</h3>
-      <p>Repetitive clicks turned into one action, or none at all, so the computer does the chores and you do the thinking.</p>
-    </div>
+    <div class="cap"><h3>Software</h3><p>Browser extensions and apps that feel instant and stay out of your way, built on current web standards and kept working on older devices too.</p></div>
+    <div class="cap"><h3>AI</h3><p>Practical intelligence inside everyday tools: features that understand what you're doing and save real minutes, not demos.</p></div>
+    <div class="cap"><h3>Automation</h3><p>Repetitive clicks turned into one action, or none at all, so the computer does the chores and you do the thinking.</p></div>
   </div>
 </section>
 
 <section class="wrap products" id="products" aria-labelledby="products-title">
   <h2 id="products-title">Products</h2>
   <p class="lead">Each Purple Wonton product does one job very well, keeps your data on your own device, and is priced fairly, with no subscriptions you didn't ask for.</p>
-  
   <article class="product-card">
     <div>
       <img class="icon" src="assets/duptaboff-icon.png" width="56" height="56" alt="">
@@ -91,10 +99,7 @@
 <section class="wrap how" aria-labelledby="how-title">
   <h2 id="how-title">How we work</h2>
   <dl class="how-list">
-    <div><dt>Private by design</dt><dd>Our products work on your device. No ads, no tracking, and nothing about you is sold or shared.</dd></div>
-    <div><dt>Tested like it matters</dt><dd>Every release runs hundreds of automated checks, including tests that click through the product in a real browser.</dd></div>
-    <div><dt>Fair, clear pricing</dt><dd>A useful free version, and one-time Lifetime upgrades. You always know what you pay and what you get.</dd></div>
-    <div><dt>Built to last</dt><dd>Clean, well-documented code that supports older computers and browsers, so tools keep working for years.</dd></div>
+    <div><dt>Private by design</dt><dd>Our products work on your device. No ads, no tracking, and nothing about you is sold or shared.</dd></div>    <div><dt>Tested like it matters</dt><dd>Every release runs hundreds of automated checks, including tests that click through the product in a real browser.</dd></div>    <div><dt>Fair, clear pricing</dt><dd>A useful free version, and one-time Lifetime upgrades. You always know what you pay and what you get.</dd></div>    <div><dt>Built to last</dt><dd>Clean, well-documented code that supports older computers and browsers, so tools keep working for years.</dd></div>
   </dl>
 </section>
 
