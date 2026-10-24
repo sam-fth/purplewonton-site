@@ -119,7 +119,7 @@
     ["Was ist der Unterschied zwischen Kostenlos und Lifetime Pro?", "Die kostenlose Version entfernt Duplikate im aktuellen Fenster: die ersten 200 ohne Limit, danach bis zu 10 pro Klick. Lifetime Pro prüft alle Fenster auf einmal, verhindert Duplikate, bevor sie sich öffnen, und bietet Rückgängig, Farbmarkierungen, Schlummern, gespeicherte Sitzungen und Aufräum-Werkzeuge."],
     ["Ist Lifetime Pro ein Abo?", "Nein. Lifetime Pro kostet {price}, einmalig bezahlt, ohne Verlängerung. Ein Lizenzschlüssel funktioniert in bis zu 5 Browsern. Sie können alle Pro-Funktionen vorher 7 Tage kostenlos testen, ohne etwas kündigen zu müssen."],
     ["Sammelt DupTabOff meine Browserdaten?", "Nein. Ihre Tabs werden nur in Ihrem Browser gelesen, und nichts davon wird irgendwohin gesendet. Keine Werbung, keine Analyse, kein Konto. DupTabOff geht nur online, um einen Pro-Lizenzschlüssel bei Gumroad zu prüfen, dem Shop, der Pro verkauft."],
-    ["In welchen Browsern funktioniert es?", "Chrome 88 oder neuer unter Windows, Mac, Linux und ChromeOS sowie Chromium-Browser wie Edge, Brave, Opera und Vivaldi. Chrome auf Smartphones unterstützt keine Erweiterungen."],
+    ["In welchen Browsern funktioniert es?", "Chrome 88 oder neuer unter Windows, Mac, Linux und ChromeOS sowie Chromium-Browser wie Edge, Brave, Opera und Vivaldi. Chrome auf Smartphones unterstützt keine Erweiterungen. DupTabOff selbst erscheint auf Deutsch, Englisch, Französisch, Japanisch oder Spanisch, passend zur Sprache Ihres Browsers."],
     ["Bekomme ich mein Geld zurück?", "Ja. Wenn Pro für Sie nicht funktioniert, schreiben Sie innerhalb von 14 Tagen nach dem Kauf an {email}, und wir erstatten den Betrag."]
   ],
   "faq_more": "Weitere Antworten auf der <a href=\"{support_url}\">Hilfeseite</a>.",
