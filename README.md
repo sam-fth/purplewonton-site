@@ -14,7 +14,8 @@ in a separate private repository, and no personal details are stored here.
 | `duptaboff/` | The DupTabOff product page (screenshots, Free vs Lifetime Pro, questions) |
 | `support/` | Contact, license keys, refunds |
 | `privacy/`, `terms/` | Privacy policy and terms (made from `content/PRIVACY.md` and `content/TERMS.md`) |
-| `assets/` | The stylesheet (`site.css`), logo, icons and screenshots |
+| `assets/` | The stylesheet (`site.css`), logo and icons |
+| `assets/shots/` | DupTabOff screenshots, one set per language: English at the top, then `de/`, `fr/`, `ja/`, `es/`. `sizes.json` lists each picture's size. Copied here automatically from the extension's repository; don't edit them by hand |
 | `i18n/` | The words of every page, one file per language: `en.json` (English), `de.json` (German), `fr.json` (French), `ja.json` (Japanese), `es.json` (Spanish) |
 | `de/`, `fr/`, `ja/`, `es/` | The pages in each language (English pages are at the top level) |
 | `build.py` | Makes every page in every language from shared templates, plus the sitemap with Google's language tags. Run `python3 build.py` after any change |
@@ -28,6 +29,20 @@ in a separate private repository, and no personal details are stored here.
    `LANGUAGES` in `build.py`.
 2. Run `python3 build.py` (needs Python 3 and the `markdown` package).
 3. Commit and push. GitHub Pages publishes the change within a minute or two.
+
+## When the DupTabOff pictures change
+
+The screenshots are made in the extension's (private) repository and copied
+here, picture files only:
+
+1. In the extension repository: `node tools/store-shots.js <language>` for each
+   language, then `python3 tools/sync-site-images.py`. That copies the pictures
+   into `assets/shots/` here (one folder per language) and writes `sizes.json`.
+2. Here: `python3 build.py`. Each language's pages pick their own pictures
+   (English if a language has none yet), and each picture address gets a short
+   fingerprint (`light.webp?v=1a2b3c4d`) so visitors see the new picture right
+   away and the sitemap tells Google the page changed.
+3. Commit and push.
 
 The privacy policy and terms are in English only; translated pages say the
 English version is the official one.

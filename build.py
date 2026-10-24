@@ -38,6 +38,34 @@ import markdown  # turns the .md text files into web page text
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# ----- SCREENSHOTS, ONE SET PER LANGUAGE -----
+# The DupTabOff screenshots are copied here from the extension's repository by its
+# tools/sync-site-images.py, which also writes assets/shots/sizes.json:
+#     assets/shots/light.webp       English          assets/shots/de/light.webp   German...
+# shot() picks the picture in the page's language (English if that language has
+# none yet), with its exact size, and adds a short fingerprint of the file
+# (?v=...) so visitors' browsers fetch the new picture as soon as it changes,
+# and the sitemap date of that page moves forward too.
+SHOTS_DIR = os.path.join(ROOT, 'assets', 'shots')
+try:
+    with open(os.path.join(SHOTS_DIR, 'sizes.json'), encoding='utf-8') as f:
+        SHOT_SIZES = json.load(f)
+except FileNotFoundError:
+    SHOT_SIZES = {}
+
+
+def shot(code, name):
+    """Returns (path inside assets/, width, height) for one screenshot."""
+    for lang in (code, 'en'):
+        rel = f'shots/{name}.webp' if lang == 'en' else f'shots/{lang}/{name}.webp'
+        full = os.path.join(ROOT, 'assets', rel)
+        if os.path.exists(full):
+            with open(full, 'rb') as f:
+                version = hashlib.sha1(f.read()).hexdigest()[:8]
+            w, h = SHOT_SIZES.get(lang, {}).get(name, [720, 1150])
+            return f'{rel}?v={version}', w, h
+    raise SystemExit(f'Missing screenshot: assets/shots/{name}.webp')
+
 # ---------------------------------------------------------------------------
 # SETTINGS
 # ---------------------------------------------------------------------------
@@ -271,6 +299,7 @@ for code, prefix in LANGUAGES:
 
     # ----- HOME PAGE -----
     a = up_home + 'assets/'  # where the pictures are, seen from this language's home page
+    home_shot = shot(code, 'light')  # the screenshot beside the DupTabOff card
     page(code, '', w['home_title'], w['home_desc'], f'''
 <section class="home-hero wrap">
   <div>
@@ -310,7 +339,7 @@ for code, prefix in LANGUAGES:
         <span class="fine">{w['dup_price']}</span>
       </div>
     </div>
-    <img class="shot" src="{a}shots/light.webp" width="720" height="1150" loading="lazy" alt="{attr(w['dup_shot_alt'])}">
+    <img class="shot" src="{a}{home_shot[0]}" width="{home_shot[1]}" height="{home_shot[2]}" loading="lazy" alt="{attr(w['dup_shot_alt'])}">
   </article>
   <p class="more">{w['more_products']}</p>
 </section>
@@ -337,10 +366,12 @@ for code, prefix in LANGUAGES:
     w.vars.update({'privacy_url': '../' + up_home + 'privacy/', 'support_url': '../support/'})
     faq = w['faq']
     faq_html = '\n'.join(f'    <details><summary>{q}</summary><p>{ans}</p></details>' for q, ans in faq)
-    shots = [('light', 1150, 'f1'), ('guard', 1200, 'f2'), ('search', 820, 'f3'), ('snooze', 1256, 'f4'), ('restore', 1250, 'f5')]
+    # The five feature sections and the screenshot each one shows (in this page's language).
+    shots = [('light', 'f1'), ('guard', 'f2'), ('search', 'f3'), ('snooze', 'f4'), ('restore', 'f5')]
 
     def feature(i, flip):
-        name, h, k = shots[i]
+        name, k = shots[i]
+        src, sw, sh = shot(code, name)
         pts = points(w[k + '_pts']) if (k + '_pts') in T['en'] else ''
         return f'''
   <section class="feature{' flip' if flip else ''}">
@@ -349,7 +380,7 @@ for code, prefix in LANGUAGES:
       <p>{w[k + '_p']}</p>
       {pts}
     </div>
-    <div class="shot-wrap"><img src="{a}shots/{name}.webp" width="720" height="{h}" loading="lazy" alt="{attr(w[k + '_alt'])}"></div>
+    <div class="shot-wrap"><img src="{a}{src}" width="{sw}" height="{sh}" loading="lazy" alt="{attr(w[k + '_alt'])}"></div>
   </section>'''
 
     india = f'<p class="fine">{w["india_note"]}</p>' if INDIA_PRICE else ''
@@ -409,7 +440,7 @@ for code, prefix in LANGUAGES:
             'url': url_of(code, 'duptaboff/'), 'inLanguage': code,
             'applicationCategory': 'BrowserApplication', 'operatingSystem': w['app_os'],
             'description': w['app_desc'], 'image': SITE + '/assets/og-duptaboff.jpg',
-            'screenshot': SITE + '/assets/shots/light.webp', 'publisher': {'@id': SITE + '/#org'},
+            'screenshot': SITE + '/assets/' + shot(code, 'light')[0].split('?')[0], 'publisher': {'@id': SITE + '/#org'},
             'offers': [
                 {'@type': 'Offer', 'name': w['free_h'], 'price': '0', 'priceCurrency': 'USD'},
                 {'@type': 'Offer', 'name': 'Lifetime Pro', 'price': PRICE.lstrip('$'), 'priceCurrency': 'USD'},
