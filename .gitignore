@@ -1,0 +1,3 @@
+# Python cache made when build.py runs.
+__pycache__/
+.DS_Store
