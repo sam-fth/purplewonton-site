@@ -55,8 +55,6 @@ PRODUCTS = [
     },
 ]
 
-# Time zones that count as "in India" for the Made in India badge.
-INDIA_TIME_ZONES = ['Asia/Kolkata', 'Asia/Calcutta']
 
 
 def page(path, title, description, body, nav='', jsonld=None, og_image='assets/og-duptaboff.jpg'):
@@ -123,7 +121,7 @@ def page(path, title, description, body, nav='', jsonld=None, og_image='assets/o
 </main>
 <footer class="site-foot">
   <div class="wrap">
-    <span>© {YEAR} Purple Wonton, Bengaluru, India {made_in_india('foot')}</span>
+    <span>© {YEAR} Purple Wonton, Bengaluru, India</span>
     <nav aria-label="Footer">
       <a href="{up}duptaboff/">DupTabOff</a>
       <a href="{up}support/">Support</a>
@@ -133,7 +131,6 @@ def page(path, title, description, body, nav='', jsonld=None, og_image='assets/o
     </nav>
   </div>
 </footer>
-{INDIA_SCRIPT}
 </body>
 </html>
 '''
@@ -149,26 +146,6 @@ def store_button(up=''):
     if CHROME_STORE_URL:
         return f'<a class="btn" href="{CHROME_STORE_URL}" rel="noopener">Add to Chrome, it\'s free</a>'
     return '<span class="btn" aria-disabled="true">Coming soon to the Chrome Web Store</span>'
-
-
-def made_in_india(where=''):
-    """The "Made in India" badge. It starts hidden; a tiny script at the end of the
-    page shows it only when the visitor's device is set to Indian time.
-
-    Our own design: the official "Make in India" lion logo is a Government of
-    India trademark, and Indian law restricts using the national flag in business
-    branding, so neither is used.
-    """
-    return (f'<span class="india-badge {where}" data-india hidden>'
-            '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.8 4.8 0 0 0-4.8 4.8C3.2 10 8 14.5 8 14.5s4.8-4.5 4.8-8.2A4.8 4.8 0 0 0 8 1.5Zm0 6.6a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6Z"/></svg>'
-            '<span>Made in India<span class="where">, Bengaluru</span></span></span>')
-
-
-# Runs on the visitor's own device. Reads only the device's time-zone setting;
-# nothing is sent anywhere. Non-India visitors never see the badge.
-INDIA_SCRIPT = ('<script>(function(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone;'
-                'if(' + json.dumps(INDIA_TIME_ZONES) + '.indexOf(z)!==-1){'
-                'document.querySelectorAll("[data-india]").forEach(function(n){n.hidden=false;});}}catch(e){}})();</script>')
 
 
 ORG = {
@@ -234,7 +211,6 @@ page('index.html',
      f'''
 <section class="home-hero wrap">
   <div>
-    {made_in_india('hero')}
     <h1>Software, AI and automation, engineered with care.</h1>
     <p class="lead">Purple Wonton is a technology studio in Bengaluru. We design and build modern software products that take repetitive work off your hands: fast, private by design, and tested in real browsers before they reach you.</p>
     <div class="actions">
@@ -320,7 +296,7 @@ page('duptaboff/index.html',
      f'''
 <section class="p-hero wrap">
   <div>
-    <p class="title"><img src="../assets/duptaboff-icon.png" width="44" height="44" alt="">DupTabOff for Chrome {made_in_india('title')}</p>
+    <p class="title"><img src="../assets/duptaboff-icon.png" width="44" height="44" alt="">DupTabOff for Chrome</p>
     <h1>Same page open three times? Keep one.</h1>
     <p class="lead">DupTabOff finds every page you have open more than once, shows which copy stays, and removes the rest in one click. Pinned tabs, music and the tab you're reading are never touched.</p>
     <div class="actions">
