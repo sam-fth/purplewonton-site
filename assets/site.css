@@ -183,7 +183,7 @@ p { margin: 0 0 1em; }
 
 /* ---------- Product page ---------- */
 .p-hero { padding: 40px 0 8px; display: grid; grid-template-columns: 1fr; gap: 36px; }
-.p-hero .title { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; color: var(--muted); font-weight: 650; }
+.p-hero .title { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 18px; color: var(--muted); font-weight: 650; }
 .p-hero .title img { width: 44px; height: 44px; }
 .feature {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 56px;
@@ -309,3 +309,18 @@ p { margin: 0 0 1em; }
   .cap-grid, .how-list { grid-template-columns: 1fr; }
   .contact-band { padding: 28px 24px; }
 }
+
+/* ---------- Pricing: free-version limits and the fuller Pro list ---------- */
+.plan .limit { color: var(--dup); font-weight: 800; }
+.plan .points.missing { margin-top: 6px; }
+/* Items the free version doesn't include: a grey dash instead of the green tick. */
+.plan .points.missing li { color: var(--muted); }
+.plan .points.missing li::before {
+  border: 0; transform: none; top: 22px; left: 3px; width: 13px; height: 2.5px;
+  background: var(--muted); border-radius: 2px;
+}
+.plan .points.headline li { font-size: 1.02rem; }
+.plan .also { margin: 22px 0 4px; font-weight: 750; color: var(--wonton-deep); }
+/* Grid children may shrink below their content width (prevents sideways scrolling on phones). */
+.p-hero > * { min-width: 0; }
+.india-badge.title { margin-left: 0; }

@@ -398,23 +398,40 @@ page('duptaboff/index.html',
         <h3>Free</h3>
         <p class="price">$0</p>
         <ul class="points">
-          <li>Remove duplicates in the window you're in: your first 200 with no limit, then up to 10 per click</li>
+          <li>Remove duplicates in <strong class="limit">the current window only</strong></li>
+          <li>Your first <strong class="limit">200</strong> removals with no limit, then <strong class="limit">10 per click</strong></li>
           <li>Duplicate count on the icon, and right-click removal</li>
           <li>Search every open tab, copy all tab links</li>
           <li>Light and dark theme, larger text, keyboard use</li>
+        </ul>
+        <ul class="points missing" aria-label="Not included in the free version">
+          <li>No Undo</li>
+          <li>No prevention mode</li>
+          <li>No snooze, saved sessions or backups</li>
         </ul>
       </div>
       <div class="plan pro">
         <h3>Lifetime Pro</h3>
         <p class="price">{PRICE} <small>paid once, no subscription</small></p>
         {('<p class="fine">' + INDIA_PRICE + ' in India</p>') if INDIA_PRICE else ''}
+        <ul class="points headline">
+          <li><strong>Remove every duplicate in one click</strong>: no 200 limit, no 10-per-click cap</li>
+          <li><strong>Check all windows at once</strong>, plus private windows if you allow it</li>
+          <li><strong>Stop duplicates before they open</strong>, including addresses you type</li>
+          <li><strong>Undo</strong> a removal, with tabs put back exactly where they were</li>
+          <li><strong>Colour marks</strong>: each set of duplicates in its own colour</li>
+        </ul>
+        <p class="also">Also included</p>
         <ul class="points">
-          <li>Remove every duplicate across all windows at once</li>
-          <li>Stop duplicates before they open</li>
-          <li>Undo, colour marks and sleep duplicates</li>
-          <li>Snooze, saved sessions with folders, notes and sharing</li>
-          <li>Automatic backups and tab clean-up tools</li>
-          <li>One key works on up to 5 browsers</li>
+          <li>Sleep duplicates to free memory without closing them</li>
+          <li>Snooze tabs until later today, tonight, tomorrow, next Monday or a time you pick</li>
+          <li>Saved sessions with folders and notes, restored with pinned tabs and groups</li>
+          <li>Share a session as a page of links, or copy it as text</li>
+          <li>Automatic backups every 30 minutes, keeping the last 24</li>
+          <li>Clean-up tools: close unused tabs, close a whole site, merge windows, sort by site</li>
+          <li>Sites to leave alone, for pages you keep open twice on purpose</li>
+          <li>Keyboard shortcut to remove duplicates from anywhere</li>
+          <li>One key works on up to 5 browsers, with all future Pro updates included</li>
         </ul>
       </div>
     </div>
