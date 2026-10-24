@@ -3,17 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Purple Wonton: small, careful tools for your browser</title>
-<meta name="description" content="Purple Wonton is an independent software studio in Bengaluru. Our first product, DupTabOff, removes duplicate tabs in one click.">
+<title>Purple Wonton: software, AI and automation, made in Bengaluru</title>
+<meta name="description" content="Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our first product: DupTabOff for Chrome.">
 <link rel="canonical" href="https://www.purplewonton.com/">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Purple Wonton: small, careful tools for your browser">
-<meta property="og:description" content="Purple Wonton is an independent software studio in Bengaluru. Our first product, DupTabOff, removes duplicate tabs in one click.">
+<meta property="og:title" content="Purple Wonton: software, AI and automation, made in Bengaluru">
+<meta property="og:description" content="Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our first product: DupTabOff for Chrome.">
 <meta property="og:url" content="https://www.purplewonton.com/">
 <meta property="og:image" content="https://www.purplewonton.com/assets/og-duptaboff.jpg">
+<meta property="og:site_name" content="Purple Wonton">
+<meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#7140e0">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.purplewonton.com/#org", "name": "Purple Wonton", "url": "https://www.purplewonton.com/", "logo": "https://www.purplewonton.com/assets/mark.png", "email": "support@purplewonton.com", "description": "Purple Wonton is a technology studio in Bengaluru, India, building software, AI and automation products.", "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN"}}, {"@type": "WebSite", "@id": "https://www.purplewonton.com/#site", "url": "https://www.purplewonton.com/", "name": "Purple Wonton", "publisher": {"@id": "https://www.purplewonton.com/#org"}, "inLanguage": "en"}]}</script>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -22,6 +27,7 @@
   <div class="wrap">
     <a class="brand" href=""><img src="assets/mark.png" width="36" height="36" alt=""><span>Purple Wonton</span></a>
     <nav class="nav" aria-label="Main">
+      <a href="#products" aria-current="page">Products</a>
       <a href="duptaboff/">DupTabOff</a>
       <a href="support/">Support</a>
     </nav>
@@ -29,40 +35,79 @@
 </header>
 <main id="main">
 
-<section class="hero wrap">
-  <h1>Small, careful tools that tidy up your browser.</h1>
-  <p class="lead">Purple Wonton is an independent software studio in Bengaluru. We make simple tools that do one job well, keep your data on your own computer, and charge a fair price, once.</p>
+<section class="home-hero wrap">
+  <div>
+    <span class="india-badge hero" data-india hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.8 4.8 0 0 0-4.8 4.8C3.2 10 8 14.5 8 14.5s4.8-4.5 4.8-8.2A4.8 4.8 0 0 0 8 1.5Zm0 6.6a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6Z"/></svg><span>Made in India<span class="where">, Bengaluru</span></span></span>
+    <h1>Software, AI and automation, engineered with care.</h1>
+    <p class="lead">Purple Wonton is a technology studio in Bengaluru. We design and build modern software products that take repetitive work off your hands: fast, private by design, and tested in real browsers before they reach you.</p>
+    <div class="actions">
+      <a class="btn" href="#products">See our products</a>
+      <a class="btn ghost" href="mailto:support@purplewonton.com">Talk to us</a>
+    </div>
+  </div>
+  <div class="hero-logo">
+    <img class="logo-light" src="assets/logo.png" width="240" height="325" alt="Purple Wonton: software, AI, automation">
+    <img class="logo-dark" src="assets/logo-dark.png" width="240" height="325" alt="Purple Wonton: software, AI, automation">
+  </div>
+</section>
 
+<section class="wrap capabilities" aria-labelledby="what-we-build">
+  <h2 id="what-we-build">What we build</h2>
+  <div class="cap-grid">
+    <div class="cap">
+      <h3>Software</h3>
+      <p>Browser extensions and apps that feel instant and stay out of your way, built on current web standards and kept working on older devices too.</p>
+    </div>
+    <div class="cap">
+      <h3>AI</h3>
+      <p>Practical intelligence inside everyday tools: features that understand what you're doing and save real minutes, not demos.</p>
+    </div>
+    <div class="cap">
+      <h3>Automation</h3>
+      <p>Repetitive clicks turned into one action, or none at all, so the computer does the chores and you do the thinking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap products" id="products" aria-labelledby="products-title">
+  <h2 id="products-title">Products</h2>
+  <p class="lead">Each Purple Wonton product does one job very well, keeps your data on your own device, and is priced fairly, with no subscriptions you didn't ask for.</p>
+  
   <article class="product-card">
     <div>
       <img class="icon" src="assets/duptaboff-icon.png" width="56" height="56" alt="">
-      <h2>DupTabOff</h2>
-      <p class="lead">Too many tabs, and three of them are the same page? DupTabOff finds every page you have open more than once and removes the extra copies in one click.</p>
+      <p class="kind">Chrome extension</p>
+      <h3 class="product-name">DupTabOff</h3>
+      <p class="lead">Too many tabs, and three of them are the same page? DupTabOff finds every page you have open more than once and removes the extra copies in one click, and with Pro stops duplicates before they open.</p>
       <div class="actions">
-        <a class="btn" href="duptaboff/">See how it works</a>
+        <a class="btn" href="duptaboff/">Explore DupTabOff</a>
         <span class="fine">Free, with Lifetime Pro for $4.99 once</span>
       </div>
     </div>
-    <img class="shot" src="assets/shots/light.webp" width="720" height="1150" alt="The DupTabOff popup listing duplicate tabs and which copy of each page stays open">
+    <img class="shot" src="assets/shots/light.webp" width="720" height="1150" loading="lazy" alt="The DupTabOff popup listing duplicate tabs and which copy of each page stays open">
   </article>
+  <p class="more">More products are in the works. Ideas for what we should build next are welcome at <a href="mailto:support@purplewonton.com">support@purplewonton.com</a>.</p>
+</section>
 
-  <section class="studio">
-    <div>
-      <img class="logo-light" src="assets/logo.png" width="200" height="271" alt="Purple Wonton: software, AI, automation">
-      <img class="logo-dark" src="assets/logo-dark.png" width="200" height="271" alt="Purple Wonton: software, AI, automation">
-    </div>
-    <div>
-      <h2>About Purple Wonton</h2>
-      <p>We're a one-person studio building software, AI and automation tools that save people small amounts of time every day. Every product is private by design: no ads, no tracking, and nothing about you is sold.</p>
-      <p>Questions or ideas? Write to <a href="mailto:support@purplewonton.com">support@purplewonton.com</a>. We read every message.</p>
-    </div>
-  </section>
+<section class="wrap how" aria-labelledby="how-title">
+  <h2 id="how-title">How we work</h2>
+  <dl class="how-list">
+    <div><dt>Private by design</dt><dd>Our products work on your device. No ads, no tracking, and nothing about you is sold or shared.</dd></div>
+    <div><dt>Tested like it matters</dt><dd>Every release runs hundreds of automated checks, including tests that click through the product in a real browser.</dd></div>
+    <div><dt>Fair, clear pricing</dt><dd>A useful free version, and one-time Lifetime upgrades. You always know what you pay and what you get.</dd></div>
+    <div><dt>Built to last</dt><dd>Clean, well-documented code that supports older computers and browsers, so tools keep working for years.</dd></div>
+  </dl>
+</section>
+
+<section class="wrap contact-band">
+  <h2>Have a question or an idea?</h2>
+  <p>Write to <a href="mailto:support@purplewonton.com">support@purplewonton.com</a>. We read every message.</p>
 </section>
 
 </main>
 <footer class="site-foot">
   <div class="wrap">
-    <span>© 2026 Purple Wonton, Bengaluru, India</span>
+    <span>© 2026 Purple Wonton, Bengaluru, India <span class="india-badge foot" data-india hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.8 4.8 0 0 0-4.8 4.8C3.2 10 8 14.5 8 14.5s4.8-4.5 4.8-8.2A4.8 4.8 0 0 0 8 1.5Zm0 6.6a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6Z"/></svg><span>Made in India<span class="where">, Bengaluru</span></span></span></span>
     <nav aria-label="Footer">
       <a href="duptaboff/">DupTabOff</a>
       <a href="support/">Support</a>
@@ -72,5 +117,6 @@
     </nav>
   </div>
 </footer>
+<script>(function(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone;if(["Asia/Kolkata", "Asia/Calcutta"].indexOf(z)!==-1){document.querySelectorAll("[data-india]").forEach(function(n){n.hidden=false;});}}catch(e){}})();</script>
 </body>
 </html>

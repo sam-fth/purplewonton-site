@@ -15,7 +15,10 @@ How to use it:
 
 Things you will want to change later are in the SETTINGS section just below.
 """
+import datetime
+import hashlib
 import html
+import json
 import os
 import re
 
@@ -36,8 +39,27 @@ PRICE = '$4.99'
 INDIA_PRICE = ''
 YEAR = '2026'
 
+# PRODUCTS shown on the home page, newest first. To add a product, copy the
+# DupTabOff entry, change the details, and add its own page (like duptaboff/).
+PRODUCTS = [
+    {
+        'name': 'DupTabOff',
+        'page': 'duptaboff/',
+        'icon': 'assets/duptaboff-icon.png',
+        'kind': 'Chrome extension',
+        'pitch': 'Too many tabs, and three of them are the same page? DupTabOff finds every page you have open more than once and removes the extra copies in one click, and with Pro stops duplicates before they open.',
+        'price': 'Free, with Lifetime Pro for ' + PRICE + ' once',
+        'shot': 'assets/shots/light.webp',
+        'shot_size': (720, 1150),
+        'shot_alt': 'The DupTabOff popup listing duplicate tabs and which copy of each page stays open',
+    },
+]
 
-def page(path, title, description, body, nav=''):
+# Time zones that count as "in India" for the Made in India badge.
+INDIA_TIME_ZONES = ['Asia/Kolkata', 'Asia/Calcutta']
+
+
+def page(path, title, description, body, nav='', jsonld=None, og_image='assets/og-duptaboff.jpg'):
     """Wrap a page's own content in the shared header and footer, then save it.
 
     path:        where the page goes, e.g. 'duptaboff/index.html'
@@ -45,6 +67,8 @@ def page(path, title, description, body, nav=''):
     description: the short summary search engines and link previews show
     body:        the page's own content
     nav:         which menu item to show as "you are here"
+    jsonld:      optional facts for Google ("structured data"): who we are, what a product costs...
+    og_image:    the picture shown when the page is shared in chat apps or social media
     """
     depth = path.count('/')
     up = '../' * depth  # how to get back to the site's top folder from this page
@@ -52,6 +76,12 @@ def page(path, title, description, body, nav=''):
 
     def cur(name):
         return ' aria-current="page"' if nav == name else ''
+
+    # Structured data: a small block of facts Google reads to understand the page
+    # (and may show as richer search results). It is invisible to visitors.
+    ld = ''
+    if jsonld:
+        ld = '<script type="application/ld+json">' + json.dumps(jsonld, ensure_ascii=False) + '</script>'
 
     doc = f'''<!doctype html>
 <html lang="en">
@@ -67,8 +97,13 @@ def page(path, title, description, body, nav=''):
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/assets/og-duptaboff.jpg">
+<meta property="og:image" content="{SITE}/{og_image}">
+<meta property="og:site_name" content="Purple Wonton">
+<meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#7140e0">
+{ld}
 <link rel="stylesheet" href="{up}assets/site.css">
 </head>
 <body>
@@ -77,6 +112,7 @@ def page(path, title, description, body, nav=''):
   <div class="wrap">
     <a class="brand" href="{up}"><img src="{up}assets/mark.png" width="36" height="36" alt=""><span>Purple Wonton</span></a>
     <nav class="nav" aria-label="Main">
+      <a href="{up}#products"{cur('products')}>Products</a>
       <a href="{up}duptaboff/"{cur('duptaboff')}>DupTabOff</a>
       <a href="{up}support/"{cur('support')}>Support</a>
     </nav>
@@ -87,7 +123,7 @@ def page(path, title, description, body, nav=''):
 </main>
 <footer class="site-foot">
   <div class="wrap">
-    <span>© {YEAR} Purple Wonton, Bengaluru, India</span>
+    <span>© {YEAR} Purple Wonton, Bengaluru, India {made_in_india('foot')}</span>
     <nav aria-label="Footer">
       <a href="{up}duptaboff/">DupTabOff</a>
       <a href="{up}support/">Support</a>
@@ -97,6 +133,7 @@ def page(path, title, description, body, nav=''):
     </nav>
   </div>
 </footer>
+{INDIA_SCRIPT}
 </body>
 </html>
 '''
@@ -112,6 +149,38 @@ def store_button(up=''):
     if CHROME_STORE_URL:
         return f'<a class="btn" href="{CHROME_STORE_URL}" rel="noopener">Add to Chrome, it\'s free</a>'
     return '<span class="btn" aria-disabled="true">Coming soon to the Chrome Web Store</span>'
+
+
+def made_in_india(where=''):
+    """The "Made in India" badge. It starts hidden; a tiny script at the end of the
+    page shows it only when the visitor's device is set to Indian time.
+
+    Our own design: the official "Make in India" lion logo is a Government of
+    India trademark, and Indian law restricts using the national flag in business
+    branding, so neither is used.
+    """
+    return (f'<span class="india-badge {where}" data-india hidden>'
+            '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.8 4.8 0 0 0-4.8 4.8C3.2 10 8 14.5 8 14.5s4.8-4.5 4.8-8.2A4.8 4.8 0 0 0 8 1.5Zm0 6.6a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6Z"/></svg>'
+            '<span>Made in India<span class="where">, Bengaluru</span></span></span>')
+
+
+# Runs on the visitor's own device. Reads only the device's time-zone setting;
+# nothing is sent anywhere. Non-India visitors never see the badge.
+INDIA_SCRIPT = ('<script>(function(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone;'
+                'if(' + json.dumps(INDIA_TIME_ZONES) + '.indexOf(z)!==-1){'
+                'document.querySelectorAll("[data-india]").forEach(function(n){n.hidden=false;});}}catch(e){}})();</script>')
+
+
+ORG = {
+    '@type': 'Organization',
+    '@id': SITE + '/#org',
+    'name': 'Purple Wonton',
+    'url': SITE + '/',
+    'logo': SITE + '/assets/mark.png',
+    'email': SUPPORT_EMAIL,
+    'description': 'Purple Wonton is a technology studio in Bengaluru, India, building software, AI and automation products.',
+    'address': {'@type': 'PostalAddress', 'addressLocality': 'Bengaluru', 'addressRegion': 'Karnataka', 'addressCountry': 'IN'},
+}
 
 
 def tab_strip():
@@ -140,40 +209,88 @@ def tab_strip():
 # ---------------------------------------------------------------------------
 # HOME PAGE
 # ---------------------------------------------------------------------------
-page('index.html',
-     'Purple Wonton: small, careful tools for your browser',
-     'Purple Wonton is an independent software studio in Bengaluru. Our first product, DupTabOff, removes duplicate tabs in one click.',
-     f'''
-<section class="hero wrap">
-  <h1>Small, careful tools that tidy up your browser.</h1>
-  <p class="lead">Purple Wonton is an independent software studio in Bengaluru. We make simple tools that do one job well, keep your data on your own computer, and charge a fair price, once.</p>
-
+def product_card(p):
+    """One product on the home page, built from an entry in PRODUCTS."""
+    w, h = p['shot_size']
+    return f'''
   <article class="product-card">
     <div>
-      <img class="icon" src="assets/duptaboff-icon.png" width="56" height="56" alt="">
-      <h2>DupTabOff</h2>
-      <p class="lead">Too many tabs, and three of them are the same page? DupTabOff finds every page you have open more than once and removes the extra copies in one click.</p>
+      <img class="icon" src="{p['icon']}" width="56" height="56" alt="">
+      <p class="kind">{html.escape(p['kind'])}</p>
+      <h3 class="product-name">{html.escape(p['name'])}</h3>
+      <p class="lead">{html.escape(p['pitch'])}</p>
       <div class="actions">
-        <a class="btn" href="duptaboff/">See how it works</a>
-        <span class="fine">Free, with Lifetime Pro for {PRICE} once</span>
+        <a class="btn" href="{p['page']}">Explore {html.escape(p['name'])}</a>
+        <span class="fine">{html.escape(p['price'])}</span>
       </div>
     </div>
-    <img class="shot" src="assets/shots/light.webp" width="720" height="1150" alt="The DupTabOff popup listing duplicate tabs and which copy of each page stays open">
-  </article>
+    <img class="shot" src="{p['shot']}" width="{w}" height="{h}" loading="lazy" alt="{html.escape(p['shot_alt'])}">
+  </article>'''
 
-  <section class="studio">
-    <div>
-      <img class="logo-light" src="assets/logo.png" width="200" height="271" alt="Purple Wonton: software, AI, automation">
-      <img class="logo-dark" src="assets/logo-dark.png" width="200" height="271" alt="Purple Wonton: software, AI, automation">
+
+page('index.html',
+     'Purple Wonton: software, AI and automation, made in Bengaluru',
+     'Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our first product: DupTabOff for Chrome.',
+     f'''
+<section class="home-hero wrap">
+  <div>
+    {made_in_india('hero')}
+    <h1>Software, AI and automation, engineered with care.</h1>
+    <p class="lead">Purple Wonton is a technology studio in Bengaluru. We design and build modern software products that take repetitive work off your hands: fast, private by design, and tested in real browsers before they reach you.</p>
+    <div class="actions">
+      <a class="btn" href="#products">See our products</a>
+      <a class="btn ghost" href="mailto:{SUPPORT_EMAIL}">Talk to us</a>
     </div>
-    <div>
-      <h2>About Purple Wonton</h2>
-      <p>We're a one-person studio building software, AI and automation tools that save people small amounts of time every day. Every product is private by design: no ads, no tracking, and nothing about you is sold.</p>
-      <p>Questions or ideas? Write to <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>. We read every message.</p>
-    </div>
-  </section>
+  </div>
+  <div class="hero-logo">
+    <img class="logo-light" src="assets/logo.png" width="240" height="325" alt="Purple Wonton: software, AI, automation">
+    <img class="logo-dark" src="assets/logo-dark.png" width="240" height="325" alt="Purple Wonton: software, AI, automation">
+  </div>
 </section>
-''')
+
+<section class="wrap capabilities" aria-labelledby="what-we-build">
+  <h2 id="what-we-build">What we build</h2>
+  <div class="cap-grid">
+    <div class="cap">
+      <h3>Software</h3>
+      <p>Browser extensions and apps that feel instant and stay out of your way, built on current web standards and kept working on older devices too.</p>
+    </div>
+    <div class="cap">
+      <h3>AI</h3>
+      <p>Practical intelligence inside everyday tools: features that understand what you're doing and save real minutes, not demos.</p>
+    </div>
+    <div class="cap">
+      <h3>Automation</h3>
+      <p>Repetitive clicks turned into one action, or none at all, so the computer does the chores and you do the thinking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap products" id="products" aria-labelledby="products-title">
+  <h2 id="products-title">Products</h2>
+  <p class="lead">Each Purple Wonton product does one job very well, keeps your data on your own device, and is priced fairly, with no subscriptions you didn't ask for.</p>
+  {"".join(product_card(p) for p in PRODUCTS)}
+  <p class="more">More products are in the works. Ideas for what we should build next are welcome at <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.</p>
+</section>
+
+<section class="wrap how" aria-labelledby="how-title">
+  <h2 id="how-title">How we work</h2>
+  <dl class="how-list">
+    <div><dt>Private by design</dt><dd>Our products work on your device. No ads, no tracking, and nothing about you is sold or shared.</dd></div>
+    <div><dt>Tested like it matters</dt><dd>Every release runs hundreds of automated checks, including tests that click through the product in a real browser.</dd></div>
+    <div><dt>Fair, clear pricing</dt><dd>A useful free version, and one-time Lifetime upgrades. You always know what you pay and what you get.</dd></div>
+    <div><dt>Built to last</dt><dd>Clean, well-documented code that supports older computers and browsers, so tools keep working for years.</dd></div>
+  </dl>
+</section>
+
+<section class="wrap contact-band">
+  <h2>Have a question or an idea?</h2>
+  <p>Write to <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>. We read every message.</p>
+</section>
+''', nav='products', jsonld={
+    '@context': 'https://schema.org',
+    '@graph': [ORG, {'@type': 'WebSite', '@id': SITE + '/#site', 'url': SITE + '/', 'name': 'Purple Wonton', 'publisher': {'@id': SITE + '/#org'}, 'inLanguage': 'en'}],
+})
 
 # ---------------------------------------------------------------------------
 # DUPTABOFF PRODUCT PAGE
@@ -203,7 +320,7 @@ page('duptaboff/index.html',
      f'''
 <section class="p-hero wrap">
   <div>
-    <p class="title"><img src="../assets/duptaboff-icon.png" width="44" height="44" alt="">DupTabOff for Chrome</p>
+    <p class="title"><img src="../assets/duptaboff-icon.png" width="44" height="44" alt="">DupTabOff for Chrome {made_in_india('title')}</p>
     <h1>Same page open three times? Keep one.</h1>
     <p class="lead">DupTabOff finds every page you have open more than once, shows which copy stays, and removes the rest in one click. Pinned tabs, music and the tab you're reading are never touched.</p>
     <div class="actions">
@@ -310,7 +427,27 @@ page('duptaboff/index.html',
     <p class="fine" style="margin-top:20px">More answers on the <a href="../support/">support page</a>.</p>
   </section>
 </div>
-''', nav='duptaboff')
+''', nav='duptaboff', jsonld={
+    '@context': 'https://schema.org',
+    '@graph': [ORG, {
+        '@type': 'SoftwareApplication',
+        'name': 'DupTabOff: Duplicate Tab Remover',
+        'url': SITE + '/duptaboff/',
+        'applicationCategory': 'BrowserApplication',
+        'operatingSystem': 'Chrome 88 or newer on Windows, macOS, Linux and ChromeOS',
+        'description': 'Removes duplicate tabs in one click. Pro stops duplicates before they open, checks every window, and adds undo, snooze, saved sessions and clean-up tools.',
+        'image': SITE + '/assets/og-duptaboff.jpg',
+        'screenshot': SITE + '/assets/shots/light.webp',
+        'publisher': {'@id': SITE + '/#org'},
+        'offers': [
+            {'@type': 'Offer', 'name': 'Free', 'price': '0', 'priceCurrency': 'USD'},
+            {'@type': 'Offer', 'name': 'Lifetime Pro', 'price': PRICE.lstrip('$'), 'priceCurrency': 'USD'},
+        ],
+    }, {
+        '@type': 'FAQPage',
+        'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq],
+    }],
+})
 
 # ---------------------------------------------------------------------------
 # SUPPORT PAGE
@@ -371,10 +508,24 @@ with open(os.path.join(ROOT, 'CNAME'), 'w') as f:
     f.write('www.purplewonton.com\n')  # tells GitHub Pages which domain this site lives on
 with open(os.path.join(ROOT, 'robots.txt'), 'w') as f:
     f.write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
+# SITEMAP for Google, with the date each page last changed.
+# .page-dates.json remembers a fingerprint of every page; when a page's content
+# changes, its date becomes today. So the dates stay correct automatically.
+state_file = os.path.join(ROOT, '.page-dates.json')
+try:
+    state = json.load(open(state_file))
+except (OSError, ValueError):
+    state = {}
+today = datetime.date.today().isoformat()
+pages = {'': 'index.html', 'duptaboff/': 'duptaboff/index.html', 'support/': 'support/index.html',
+         'privacy/': 'privacy/index.html', 'terms/': 'terms/index.html'}
 with open(os.path.join(ROOT, 'sitemap.xml'), 'w') as f:
-    urls = ['', 'duptaboff/', 'support/', 'privacy/', 'terms/']
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-    for u in urls:
-        f.write(f'  <url><loc>{SITE}/{u}</loc></url>\n')
+    for u, file in pages.items():
+        digest = hashlib.sha256(open(os.path.join(ROOT, file), 'rb').read()).hexdigest()
+        if state.get(u, {}).get('hash') != digest:
+            state[u] = {'hash': digest, 'date': today}
+        f.write(f'  <url><loc>{SITE}/{u}</loc><lastmod>{state[u]["date"]}</lastmod></url>\n')
     f.write('</urlset>\n')
+json.dump(state, open(state_file, 'w'), indent=1)
 print('done')

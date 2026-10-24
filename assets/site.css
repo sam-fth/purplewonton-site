@@ -250,3 +250,62 @@ p { margin: 0 0 1em; }
   .nav { gap: 14px; font-size: 0.92rem; }
   .brand span { display: none; }
 }
+
+/* ---------- Home page: studio hero ---------- */
+.home-hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 48px;
+  align-items: center; padding: 56px 0 24px;
+}
+.home-hero h1 { max-width: 12em; }
+.hero-logo { justify-self: end; }
+.hero-logo img { width: 240px; }
+.hero-logo .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { .hero-logo .logo-light { display: none; } .hero-logo .logo-dark { display: block; } }
+
+/* What we build: three areas, separated by a purple rule rather than boxed in cards. */
+.capabilities { margin-top: 88px; }
+.cap-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 24px; }
+.cap { border-top: 3px solid var(--wonton); padding-top: 18px; }
+.cap p { color: var(--muted); margin: 0; }
+
+/* Products */
+.products { margin-top: 104px; }
+.products .product-card { margin-top: 32px; }
+.kind { margin: 0 0 4px; color: var(--muted); font-weight: 650; font-size: 0.95rem; }
+.product-name { font-size: clamp(1.7rem, 3.2vw, 2.3rem); font-weight: 820; letter-spacing: -0.025em; margin-bottom: 12px; }
+.more { margin-top: 28px; color: var(--muted); }
+
+/* How we work: a two-column list of plain promises. */
+.how { margin-top: 104px; }
+.how-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin: 24px 0 0; }
+.how-list div { padding: 18px 0; border-top: 1px solid var(--line); }
+.how-list dt { font-weight: 750; font-size: 1.1rem; margin-bottom: 4px; }
+.how-list dd { margin: 0; color: var(--muted); }
+
+.contact-band { margin-top: 96px; padding: 36px 40px; border-radius: var(--radius-lg); background: var(--wonton-soft); }
+.contact-band h2 { font-size: 1.7rem; }
+.contact-band p { margin: 0; }
+
+/* ---------- Made in India badge (shown only to visitors in India) ---------- */
+.india-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px 5px 9px; border-radius: 999px;
+  background: var(--surface); color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--wonton);
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0; vertical-align: middle;
+}
+.india-badge[hidden] { display: none; }
+.india-badge svg { width: 14px; height: 14px; fill: var(--wonton); flex: none; }
+.india-badge .where { font-weight: 550; color: var(--muted); }
+.india-badge.hero { margin-bottom: 18px; }
+.india-badge.title { margin-left: 6px; }
+.india-badge.foot { margin-left: 8px; font-size: 0.78rem; padding: 3px 10px 3px 8px; }
+.india-badge.foot .where { display: none; }
+
+@media (max-width: 860px) {
+  .home-hero { grid-template-columns: 1fr; padding-top: 32px; }
+  .hero-logo { justify-self: start; order: -1; }
+  .hero-logo img { width: 120px; }
+  .cap-grid, .how-list { grid-template-columns: 1fr; }
+  .contact-band { padding: 28px 24px; }
+}
