@@ -189,23 +189,23 @@
   "s_common_p": "See the <a href=\"{pricing_url}\">Free vs Lifetime Pro</a> comparison and the questions at the bottom of the <a href=\"{dt_url}\">DupTabOff page</a>.",
   "s_lang_note": "",
   "pw_kind": "Chrome and Edge extension",
-  "pw_pitch": "Looking at a product and wondering whether another store sells it for less? PryceHunt shows the price at other Indian stores right on the page, with price history and honest facts about sales. No account, no ads, no tracking.",
+  "pw_pitch": "Looking at a product and wondering whether another store sells it for less? PryceHunt puts a button for each Indian store right on the page, so you can check in one click, with price history and honest facts about sales. No account, no ads, no tracking.",
   "pw_price": "Free during launch",
-  "pw_shot_alt": "PryceHunt's comparison box on a product page, with a cheaper price found at another store",
+  "pw_shot_alt": "PryceHunt's comparison box on a product page, with a button for each other store",
   "pw_title": "PryceHunt: compare prices across Indian stores | Purple Wonton",
-  "pw_desc": "PryceHunt is a Chrome and Edge extension that shows what the product you are viewing costs at other Indian stores, with price history, honest sale facts and price-drop alerts. No account, no ads, no tracking.",
+  "pw_desc": "PryceHunt is a Chrome and Edge extension that takes you from a product to the same product at other Indian stores in one click, with price history, honest sale facts and price-drop alerts. No account, no ads, no tracking.",
   "pw_for_chrome": "PryceHunt for Chrome and Edge",
   "pw_h1": "Compare prices across Indian stores, right on the page",
-  "pw_lead": "PryceHunt shows what the product you are looking at costs at other stores, how its price has moved, and whether that big discount is real. No account, no ads, no tracking: your pincode, settings and watch-list stay in your browser.",
+  "pw_lead": "PryceHunt takes you from the product you are looking at to the same product at other stores in one click, shows how its price has moved, and whether that big discount is real. No account, no ads, no tracking: your pincode, settings and watch-list stay in your browser.",
   "pw_btn_features": "See what it does",
-  "pw_f1_h": "See other stores' prices without leaving the page",
-  "pw_f1_p": "A small box under the price opens the comparison. Switch on “Show the price here instead of a link” and PryceHunt shows the other store's price in the box, marked “likely the same product” or “similar: check details”. You can switch that on or off right there.",
+  "pw_f1_h": "Check other stores in one click",
+  "pw_f1_p": "A small box under the price lists the other stores. Press a store's button and its page opens, searching for the same product. On the quick-delivery grocery apps, PryceHunt learns from people who share prices which page is exactly the same product, and then opens that page directly. That list starts small and grows as more people use PryceHunt.",
   "pw_f1_pts": [
-    "Live prices today for Amazon.in and Flipkart; the other stores open their own search",
-    "The cheapest store found is called out, and you can list the lowest price first",
-    "Quick-delivery apps are included, with prices per 100 g, per 100 ml or per piece"
+    "Amazon.in, Flipkart, Meesho, Myntra, Ajio, Croma and the grocery apps Blinkit, Zepto, BigBasket and Swiggy Instamart",
+    "Grocery searches keep the brand and pack size, and unit prices show per 100 g, per 100 ml or per piece",
+    "You choose which stores to show, and in what order"
   ],
-  "pw_f1_alt": "PryceHunt's comparison box on a product page, showing a cheaper price at another store",
+  "pw_f1_alt": "PryceHunt's comparison box on a product page, with a button for each other store",
   "pw_f2_h": "A Compare button on every product",
   "pw_f2_p": "On search, category and home pages, and on the similar items of a product page, every product gets a small “Compare prices” button. Nothing is fetched until you press one.",
   "pw_f2_pts": [
@@ -223,30 +223,29 @@
   ],
   "pw_f3_alt": "PryceHunt's price history chart, the check of a 70 percent off claim and the price before a sale",
   "pw_f4_h": "Your choices, in clear settings",
-  "pw_f4_p": "Live prices, alerts, Telegram and every other feature that contacts anything are off until you switch them on, and each setting says what is sent. Anonymous price sharing is the one exception: it is on by default, and you can switch it off. Choose your stores and their order, where the box appears, and how it behaves.",
+  "pw_f4_p": "Everything else that contacts anything is off until you switch it on, and each setting says what is sent. Anonymous price sharing is the one exception: it is on by default, and you can switch it off. Choose your stores and their order, where the box appears, and how it behaves.",
   "pw_f4_pts": [
     "No account to make",
-    "Live prices, alerts, price sharing and Telegram are separate switches",
+    "Price sharing, price alerts, sale dates and your area are separate switches",
     "Erase everything with one button"
   ],
   "pw_f4_alt": "PryceHunt's settings page, divided into General, Stores, Prices and alerts, and Privacy and data",
   "pw_f5_h": "Pause, watch and get alerts",
-  "pw_f5_p": "The toolbar menu pauses PryceHunt for a while, keeps your watch-list and lets you set your pincode. Set an alert price or range for a product, choose which sites to watch during a sale, and get a notification when it drops.",
+  "pw_f5_p": "The toolbar menu pauses PryceHunt for a while, keeps your watch-list and lets you set your pincode. Set an alert price or range for a product, choose when to watch it during a sale season, and get a notification when it drops.",
   "pw_f5_pts": [
-    "Alerts are checked while your browser is open. Some stores, such as Amazon.in, do not allow automatic checks, so those prices update when you open the product",
-    "Optional alerts on Telegram, to reach your phone"
+    "Alerts are checked while your browser is open. Some stores, such as Amazon.in, do not allow automatic checks, so those prices update when you open the product"
   ],
   "pw_f5_alt": "PryceHunt's toolbar menu, with pause, the watch-list and a pincode box",
-  "pw_f6_h": "Share a comparison with family and friends",
-  "pw_f6_p": "Pressing Share makes a picture and a short message of the comparison, ready for WhatsApp or Telegram. It contains the product and prices only, nothing about you.",
-  "pw_f6_alt": "A PryceHunt share card comparing the price of a phone at three stores",
+  "pw_f6_h": "Share a product with family and friends",
+  "pw_f6_p": "Pressing Share makes a picture and a short message about the product, ready for WhatsApp, or you can copy or save the picture. It contains the product and its price only, nothing about you.",
+  "pw_f6_alt": "A PryceHunt share card for a phone at Flipkart, with its price and the lowest-price note",
   "pw_promise_h": "Private by design",
   "pw_promise_p": "PryceHunt has no accounts, no advertising, no analytics and no tracking, and we never sell data. Your settings, pincode, watch-list and price history stay in your browser. Anonymous price sharing is on by default: it sends the store, product code, price and day of the products you view on the supported stores, never who you are or your pincode, and you can switch it off in Settings. Other features that send anything to us or to other services are off until you switch them on, and the settings say exactly what is sent.",
   "pw_good_h": "Good to know",
   "pw_good_pts": [
-    "Products are matched by name, so a match can be wrong. Always check the details before you buy, and flag a wrong match or price.",
-    "When you click “Go to this store”, PryceHunt may add an affiliate link that earns us a commission at no cost to you, and it says so next to the button.",
-    "PryceHunt is independent and is not affiliated with any store or with Telegram."
+    "Products are found by name, so a store's results can be wrong. Always check the details on the store's page before you buy, and flag a wrong match.",
+    "Every link PryceHunt opens is a plain link today. If we ever add affiliate links that earn us a commission at no cost to you, they would be added only when you click, only for stores whose rules allow it, and we would say so next to the button.",
+    "PryceHunt is independent and is not affiliated with any store."
   ],
   "pw_shops_h": "Works on",
   "pw_shops_p": "Amazon.in, Flipkart, Meesho, Myntra, Ajio, Croma, Blinkit, Zepto, BigBasket and Swiggy Instamart. More Indian stores are added over time.",
@@ -267,7 +266,7 @@
     ],
     [
       "How accurate are the matches?",
-      "PryceHunt matches products by name, so it can be wrong: a different size, colour or model can look the same. It labels each match as “likely the same product” or “similar: check details”, and you can flag a wrong match or price."
+      "PryceHunt finds products by name, so a store's results can be wrong: a different size, colour or model can look similar. Always check the details on the store's page before you buy, and use the flag to report a wrong match."
     ],
     [
       "Does PryceHunt see what I browse?",
@@ -279,11 +278,11 @@
     ],
     [
       "Why can't alerts arrive while my browser is closed?",
-      "The price checks run in your browser, so they need it open. You can also let PryceHunt watch for you while the browser is closed, using prices that PryceHunt users share anonymously, and receive alerts on Telegram; this can miss some drops."
+      "The price checks run in your browser, so they need it open. When it is, and you allowed notifications, PryceHunt shows a notification if the price drops."
     ],
     [
       "Does PryceHunt earn money from my purchases?",
-      "It may. When you click “Go to this store” and the store is cheaper or has an offer, PryceHunt may open an affiliate link that earns us a commission at no cost to you. It says so next to the button, and the link is added only when you click."
+      "Not at the moment: every link PryceHunt opens is a plain link. If we ever add affiliate links, they would be added only when you click, only for stores whose rules allow it, and PryceHunt would say so next to the button."
     ],
     [
       "How do I get in touch?",

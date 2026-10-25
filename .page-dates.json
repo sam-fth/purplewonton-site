@@ -1,6 +1,6 @@
 {
  "": {
-  "hash": "3c14a02ded64d6b0ab85890be731a7b0bebfae06a79516663b3ba894e3f49cbe",
+  "hash": "af90dbeebdc42acec015babbeefbdd3e4c6e0c582b9f7c384a3f9d4f49b3169d",
   "date": "2026-10-25"
  },
  "duptaboff/": {
@@ -20,7 +20,7 @@
   "date": "2026-10-25"
  },
  "de/": {
-  "hash": "271647dbdce2c053c8573ac02e75e5208977f2c927e9fc547f3eb6616f436275",
+  "hash": "cef7d310e689affb579ffa69323c5cd6a274e145e5dc28e145fff649b82e469e",
   "date": "2026-10-25"
  },
  "de/duptaboff/": {
@@ -32,7 +32,7 @@
   "date": "2026-10-25"
  },
  "fr/": {
-  "hash": "b7e43fc0f046c15069f96b24d1810c4c0598f87cc1e8622d3321fbe2662e140d",
+  "hash": "d73a8d66a8eac330a0044314d9791a4e9b8345506f928a022b4bb644a80d88f3",
   "date": "2026-10-25"
  },
  "fr/duptaboff/": {
@@ -44,7 +44,7 @@
   "date": "2026-10-25"
  },
  "ja/": {
-  "hash": "c29b0dcb186b34189c55737d13a4051fd3f34303b797ed09bfca62aae70fe5c6",
+  "hash": "3fb2047ea01dc83be40e967e02c6fbf285c8d37eb99346779823ff1709ede82a",
   "date": "2026-10-25"
  },
  "ja/duptaboff/": {
@@ -56,7 +56,7 @@
   "date": "2026-10-25"
  },
  "es/": {
-  "hash": "e44b0347b3a6acc35c008602fda2cade217f70c6afd492a4fc891db51d28db4a",
+  "hash": "9b0cc6831c6c1fa2d6c37bdf60e03c9208ef0eeb59d3cc025de0df3987d0d89d",
   "date": "2026-10-25"
  },
  "es/duptaboff/": {
@@ -68,7 +68,7 @@
   "date": "2026-10-25"
  },
  "prycehunt/": {
-  "hash": "a883ab8db8f5882b19ea477bb1b3b3374a350ec1832a3b763de1721d6b885f81",
+  "hash": "c6d0266c64b6587245e7899c681e84fc5aca260028b2a2199730b4737b0889d1",
   "date": "2026-10-25"
  }
 }
