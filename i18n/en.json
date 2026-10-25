@@ -219,11 +219,11 @@
   "pw_f3_pts": [
     "No verdict and no pressure: it states the facts and you decide",
     "Sale dates are the usual timing, because shops announce theirs late; you can choose the seasons to follow and add your own",
-    "Optional shared history, built from prices other people chose to share anonymously"
+    "Shared history, built from prices that PryceHunt users share anonymously (on by default; you can switch it off)"
   ],
   "pw_f3_alt": "PryceHunt's price history chart, the check of a 70 percent off claim and the price before a sale",
   "pw_f4_h": "Your choices, in clear settings",
-  "pw_f4_p": "Everything that contacts anything is off until you switch it on, and each setting says what is sent. Choose your stores and their order, where the box appears, and how it behaves.",
+  "pw_f4_p": "Live prices, alerts, Telegram and every other feature that contacts anything are off until you switch them on, and each setting says what is sent. Anonymous price sharing is the one exception: it is on by default, and you can switch it off. Choose your stores and their order, where the box appears, and how it behaves.",
   "pw_f4_pts": [
     "No account to make",
     "Live prices, alerts, price sharing and Telegram are separate switches",
@@ -241,7 +241,7 @@
   "pw_f6_p": "Pressing Share makes a picture and a short message of the comparison, ready for WhatsApp or Telegram. It contains the product and prices only, nothing about you.",
   "pw_f6_alt": "A PryceHunt share card comparing the price of a phone at three stores",
   "pw_promise_h": "Private by design",
-  "pw_promise_p": "PryceHunt has no accounts, no advertising, no analytics and no tracking, and we never sell data. Your settings, pincode, watch-list and price history stay in your browser. A few optional features send limited information to our price server or to other services; each one is off until you switch it on, and the settings say exactly what is sent.",
+  "pw_promise_p": "PryceHunt has no accounts, no advertising, no analytics and no tracking, and we never sell data. Your settings, pincode, watch-list and price history stay in your browser. Anonymous price sharing is on by default: it sends the store, product code, price and day of the products you view on the supported stores, never who you are or your pincode, and you can switch it off in Settings. Other features that send anything to us or to other services are off until you switch them on, and the settings say exactly what is sent.",
   "pw_good_h": "Good to know",
   "pw_good_pts": [
     "Products are matched by name, so a match can be wrong. Always check the details before you buy, and flag a wrong match or price.",
@@ -271,11 +271,15 @@
     ],
     [
       "Does PryceHunt see what I browse?",
-      "On the shopping sites it works on, it reads the product name and price on the page you are viewing, on your computer. It sends nothing by itself. A few optional features send limited information, each only after you switch it on."
+      "On the shopping sites it works on, it reads the product name and price on the page you are viewing, on your computer. With anonymous price sharing, which is on by default and can be switched off in Settings, it sends the store, product code, price and day of the products you view, never who you are, your pincode or the page address. Other features that send anything are off until you switch them on."
+    ],
+    [
+      "Can I switch off price sharing?",
+      "Yes. Open PryceHunt's settings, go to Privacy and data, and untick “Share anonymous prices”. The welcome screen shown at install explains what it sends."
     ],
     [
       "Why can't alerts arrive while my browser is closed?",
-      "The price checks run in your browser, so they need it open. You can also let PryceHunt watch for you while the browser is closed, using prices that other people chose to share, and receive alerts on Telegram; this can miss some drops."
+      "The price checks run in your browser, so they need it open. You can also let PryceHunt watch for you while the browser is closed, using prices that PryceHunt users share anonymously, and receive alerts on Telegram; this can miss some drops."
     ],
     [
       "Does PryceHunt earn money from my purchases?",
