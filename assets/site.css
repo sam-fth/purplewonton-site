@@ -344,3 +344,27 @@ p { margin: 0 0 1em; }
   .lang summary span { display: none; }   /* on phones, just the globe icon */
   .lang summary { padding: 7px; }
 }
+
+/* ----- PryceHunt: wide (landscape) screenshots ----- */
+.product-card .shot.wide { max-height: none; object-fit: contain; background: var(--surface); }
+.feature.wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); align-items: center; }
+.feature.wide.flip { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+.feature.wide.flip .shot-wrap { order: -1; }
+.shot-wrap.wide { max-width: none; }
+.shot-wrap.wide img { max-height: none; height: auto; object-fit: contain; }
+.p-hero .hero-shot { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.feature-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 96px; }
+.feature-lists h2 { font-size: 1.4rem; }
+@media (max-width: 860px) {
+  .feature.wide, .feature.wide.flip { grid-template-columns: 1fr; }
+  .feature.wide.flip .shot-wrap { order: 0; }
+  .feature-lists { grid-template-columns: 1fr; gap: 24px; margin-top: 64px; }
+}
+
+/* ----- Narrow phones: the menu now has four links, so it gets a little tighter and may wrap ----- */
+@media (max-width: 440px) {
+  .nav { gap: 10px; font-size: 0.86rem; }
+  .head-right { gap: 8px; flex-wrap: wrap; }
+  .nav { flex-wrap: wrap; }
+  .site-head .wrap { flex-wrap: wrap; row-gap: 10px; }
+}

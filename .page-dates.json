@@ -1,70 +1,74 @@
 {
  "": {
-  "hash": "e6b4fd0e1f084201d4acec1f4237431239613bad349e58c91a4390c41b9faa63",
-  "date": "2026-10-23"
+  "hash": "3ee0005cd7d2536020e84ffb8f02ec56044df74623bb69a8ac515c84ba8afe35",
+  "date": "2026-10-25"
  },
  "duptaboff/": {
-  "hash": "9a63b6feb94d3a2dee6987d1f2d886b072007621f982e10733b9d8258eb3c081",
-  "date": "2026-10-23"
+  "hash": "4760d00831d21b2d1faf5a9b07e620e13bbecf1722e556608ec87cdfa89ce1a5",
+  "date": "2026-10-25"
  },
  "support/": {
-  "hash": "e470641f29cbd14240306231f512fcb1ffcdd5071fdbc9dc017c05396d8c620e",
-  "date": "2026-10-24"
+  "hash": "b57cd85479f74a40157ce7b8c9e8bc555757c889c8299e5705f49a919a12b8b8",
+  "date": "2026-10-25"
  },
  "privacy/": {
-  "hash": "71d990484a17288b5261578bc588237782d39e0a7cebc975a2facf10ecaa86ca",
-  "date": "2026-10-24"
+  "hash": "922dfc6bc5a8a7623a3da77d64fec1d55347e7f2c28858e0f27c391f38f7cbb2",
+  "date": "2026-10-25"
  },
  "terms/": {
-  "hash": "86e3ef991c2e2484f5a057f518434952acb55dfcf26c7f91451fa587b352794a",
-  "date": "2026-10-24"
+  "hash": "7001a6b068a4f688ed0be94e604c374439938684c1f3e8c63a9fc898ee6066ae",
+  "date": "2026-10-25"
  },
  "de/": {
-  "hash": "9eb89a260eb79d785b0856a2d7064a903579ed787732250c8e39631ce828cb36",
-  "date": "2026-10-23"
+  "hash": "d7e75bea7c4846ba8344e029a2c7b9f76a05160e3fd692b43285e27e8985494e",
+  "date": "2026-10-25"
  },
  "de/duptaboff/": {
-  "hash": "bfd367d1b21a5d01dbed93f1f7b1eb51b91b150db5ab9278439a0d92a094cf85",
-  "date": "2026-10-23"
+  "hash": "ad0557fff12cbfd2f96d0a1b4ea807238c19d8da2932179f128288709c2ac286",
+  "date": "2026-10-25"
  },
  "de/support/": {
-  "hash": "5edd3e6b5e2574e95e7a4dd33836d694e7b57d34e8804df78211a1eb3913b724",
-  "date": "2026-10-24"
+  "hash": "179a8120d26de34e8870eab3c44e5d8f587825680f302f962ab018b27dc84a4d",
+  "date": "2026-10-25"
  },
  "fr/": {
-  "hash": "21d646f4615edf83cf60e67f0dbbd3a3d72b83578a10d73d18724c421fee9f1f",
-  "date": "2026-10-23"
+  "hash": "17571a0c9213819734155efbd5bb7b8e95cb39635f173e2dfc33720f7782a07b",
+  "date": "2026-10-25"
  },
  "fr/duptaboff/": {
-  "hash": "061d79604305dfb735dbb90b9d0e2c43e18735f74e2e3f89a36bbcd5ce6f351b",
-  "date": "2026-10-23"
+  "hash": "f328acd9aeee9375bb329eac50b3559038938c72c8a8875ead5c12ec9f6a26e3",
+  "date": "2026-10-25"
  },
  "fr/support/": {
-  "hash": "9ba40324694e8daaed1b84e8e4bed3bbb1790ea7bebb6f2ddaab9e0935d5d1d5",
-  "date": "2026-10-24"
+  "hash": "6acb9b68d87a58d7d130119d86191e73c32dfd0f6b21222f1766ee16e9249799",
+  "date": "2026-10-25"
  },
  "ja/": {
-  "hash": "9523a0f3a283fc173622e9763351acad68e43b85dc20b0f32d066311c5979655",
-  "date": "2026-10-23"
+  "hash": "43c3b24b5b2e1cd721c25332e5b199169c6a1f3afefb5c1c812976bf15084a83",
+  "date": "2026-10-25"
  },
  "ja/duptaboff/": {
-  "hash": "e5982bd582df58f6fce5c1cf3ac679e2145d0325841b1e334c07f5c0dc90836d",
-  "date": "2026-10-23"
+  "hash": "7d8b5cb781585edc5af9b38f921f8afd18e116d9b9f6ca16f3a89c6e766204b9",
+  "date": "2026-10-25"
  },
  "ja/support/": {
-  "hash": "5a72b8c74132f1dc7ec35b5206ac8f65d9f30c488f902ebff39c0dd004e40b78",
-  "date": "2026-10-24"
+  "hash": "a38b73a75732dd8795c839f45c23c7671b9fb1d973145998c36bcfcd1b177023",
+  "date": "2026-10-25"
  },
  "es/": {
-  "hash": "ed192c1c7729980aa52d4e8adca3c7211063effbefb6e51836c66bac5dbb96e9",
-  "date": "2026-10-23"
+  "hash": "30911ff5bccfa3d726880e07d76fb1beefdaeb0e9feb15bde203b7f4774b7b69",
+  "date": "2026-10-25"
  },
  "es/duptaboff/": {
-  "hash": "6bf4162f6b4fdc216e09260bc449dc8473d76755efb29bec3239df151db98dea",
-  "date": "2026-10-23"
+  "hash": "eb41a37bbdcfb4c68e6a6ca57f07eca146e62da95a4d26a0fb814546629a79ea",
+  "date": "2026-10-25"
  },
  "es/support/": {
-  "hash": "643648ace61bdcf6355ea0376366ed20c63ad6bdff05062603ec3b34940bc96e",
-  "date": "2026-10-24"
+  "hash": "bfe01b0339df0863e53fc3154b7d6c4ecfd60b40312c87b9d5b32f3fb0943bb5",
+  "date": "2026-10-25"
+ },
+ "prycehunt/": {
+  "hash": "547af3175674b5c9ab0b25ff52ff821d8afa5066e63e5d087dfa29be730e64f9",
+  "date": "2026-10-25"
  }
 }

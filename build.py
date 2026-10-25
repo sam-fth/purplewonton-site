@@ -66,6 +66,27 @@ def shot(code, name):
             return f'{rel}?v={version}', w, h
     raise SystemExit(f'Missing screenshot: assets/shots/{name}.webp')
 
+# ----- PRYCEHUNT SCREENSHOTS (English only, so one set for every page) -----
+# The pictures are copied here from PryceHunt's repository (its store/screenshots folder); they are
+# shaped 1280 x 800. assets/shots/prycehunt/sizes.json lists their sizes.
+PW_DIR = os.path.join(ROOT, 'assets', 'shots', 'prycehunt')
+try:
+    with open(os.path.join(PW_DIR, 'sizes.json'), encoding='utf-8') as f:
+        PW_SIZES = json.load(f)
+except FileNotFoundError:
+    PW_SIZES = {}
+
+
+def pw_shot(name):
+    """Returns (path inside assets/, width, height) for one PryceHunt screenshot."""
+    full = os.path.join(PW_DIR, name + '.webp')
+    if not os.path.exists(full):
+        raise SystemExit(f'Missing screenshot: assets/shots/prycehunt/{name}.webp')
+    with open(full, 'rb') as f:
+        version = hashlib.sha1(f.read()).hexdigest()[:8]
+    w, h = PW_SIZES.get(name, [1280, 800])
+    return f'shots/prycehunt/{name}.webp?v={version}', w, h
+
 # ---------------------------------------------------------------------------
 # SETTINGS
 # ---------------------------------------------------------------------------
@@ -74,6 +95,8 @@ SUPPORT_EMAIL = 'support@purplewonton.com'
 # Paste the Chrome Web Store address here once DupTabOff is published.
 # While it's empty, the button says "Coming soon to the Chrome Web Store".
 CHROME_STORE_URL = ''
+# Paste PryceHunt's Chrome Web Store address here once it is published (same idea as above).
+PRYCEHUNT_STORE_URL = ''
 PRICE = '$4.99'
 # Set to '₹199' once the India discount code exists in Gumroad; empty hides the line.
 INDIA_PRICE = ''
@@ -130,7 +153,7 @@ def url_of(code, rel):
     return SITE + '/' + prefix + rel
 
 
-def page(code, rel, title, description, body, nav='', jsonld=None, translated=True):
+def page(code, rel, title, description, body, nav='', jsonld=None, translated=True, og_image='og-duptaboff.jpg'):
     """Wrap a page's content in the shared header and footer, then save it.
 
     code:        language code ('en', 'de', ...)
@@ -140,7 +163,8 @@ def page(code, rel, title, description, body, nav='', jsonld=None, translated=Tr
     body:        the page's own content
     nav:         which menu item to show as "you are here"
     jsonld:      facts for Google ("structured data"), invisible to visitors
-    translated:  False for English-only pages (privacy, terms): no language menu entries
+    translated:  False for English-only pages (privacy, terms, PryceHunt): no language menu entries
+    og_image:    the picture shown when the page's link is shared
     """
     w = Words(code, T[code])
     prefix = dict(LANGUAGES)[code]
@@ -196,7 +220,7 @@ def page(code, rel, title, description, body, nav='', jsonld=None, translated=Tr
 <meta property="og:title" content="{attr(title)}">
 <meta property="og:description" content="{attr(description)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/assets/og-duptaboff.jpg">
+<meta property="og:image" content="{SITE}/assets/{og_image}">
 <meta property="og:site_name" content="Purple Wonton">
 <meta property="og:locale" content="{T[code]["locale"]}">
 <meta name="twitter:card" content="summary_large_image">
@@ -214,6 +238,7 @@ def page(code, rel, title, description, body, nav='', jsonld=None, translated=Tr
       <nav class="nav" aria-label="Main">
         <a href="{home}#products"{cur('products')}>{w["nav_products"]}</a>
         <a href="{home}duptaboff/"{cur('duptaboff')}>DupTabOff</a>
+        <a href="{up}prycehunt/"{cur('prycehunt')}>PryceHunt</a>
         <a href="{home}support/"{cur('support')}>{w["nav_support"]}</a>
       </nav>{lang_menu}
     </div>
@@ -227,6 +252,7 @@ def page(code, rel, title, description, body, nav='', jsonld=None, translated=Tr
     <span>{w["footer_copy"].replace("{year}", YEAR)}</span>
     <nav aria-label="Footer">
       <a href="{home}duptaboff/">DupTabOff</a>
+      <a href="{up}prycehunt/">PryceHunt</a>
       <a href="{home}support/">{w["nav_support"]}</a>
       <a href="{up}privacy/">{w["footer_privacy"]}</a>
       <a href="{up}terms/">{w["footer_terms"]}</a>
@@ -257,6 +283,13 @@ def store_button(w):
     """The "Add to Chrome" button. Before the store link exists it says "coming soon"."""
     if CHROME_STORE_URL:
         return f'<a class="btn" href="{CHROME_STORE_URL}" rel="noopener">{w["store_add"]}</a>'
+    return f'<span class="btn" aria-disabled="true">{w["store_soon"]}</span>'
+
+
+def pw_store_button(w):
+    """PryceHunt's "Add to Chrome" button: "coming soon" until PRYCEHUNT_STORE_URL is set."""
+    if PRYCEHUNT_STORE_URL:
+        return f'<a class="btn" href="{PRYCEHUNT_STORE_URL}" rel="noopener">{w["store_add"]}</a>'
     return f'<span class="btn" aria-disabled="true">{w["store_soon"]}</span>'
 
 
@@ -300,6 +333,7 @@ for code, prefix in LANGUAGES:
     # ----- HOME PAGE -----
     a = up_home + 'assets/'  # where the pictures are, seen from this language's home page
     home_shot = shot(code, 'light')  # the screenshot beside the DupTabOff card
+    pw_card = pw_shot('comparison-box')  # the screenshot beside the PryceHunt card
     page(code, '', w['home_title'], w['home_desc'], f'''
 <section class="home-hero wrap">
   <div>
@@ -340,6 +374,19 @@ for code, prefix in LANGUAGES:
       </div>
     </div>
     <img class="shot" src="{a}{home_shot[0]}" width="{home_shot[1]}" height="{home_shot[2]}" loading="lazy" alt="{attr(w['dup_shot_alt'])}">
+  </article>
+  <article class="product-card">
+    <div>
+      <img class="icon" src="{a}prycehunt-icon.png" width="56" height="56" alt="">
+      <p class="kind">{w['pw_kind']}</p>
+      <h3 class="product-name">PryceHunt</h3>
+      <p class="lead">{w['pw_pitch']}</p>
+      <div class="actions">
+        <a class="btn" href="{up_home}prycehunt/">{w.v.get('explore', T['en']['explore']).replace('{name}', 'PryceHunt')}</a>
+        <span class="fine">{w['pw_price']}</span>
+      </div>
+    </div>
+    <img class="shot wide" src="{a}{pw_card[0]}" width="{pw_card[1]}" height="{pw_card[2]}" loading="lazy" alt="{attr(w['pw_shot_alt'])}">
   </article>
   <p class="more">{w['more_products']}</p>
 </section>
@@ -478,6 +525,85 @@ for code, prefix in LANGUAGES:
 
 
 # ---------------------------------------------------------------------------
+# PRYCEHUNT PRODUCT PAGE (English only for now; the other languages' menus and cards link to it)
+# ---------------------------------------------------------------------------
+w = Words('en', T['en'])
+w.vars = {'price': PRICE, 'email': SUPPORT_EMAIL, 'email_link': f'<a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>',
+          'india': INDIA_PRICE, 'name': 'PryceHunt', 'pro': '', 'support_url': '../support/'}
+a = '../assets/'
+pw_features = [('comparison-box', 'pw_f1'), ('compare-buttons', 'pw_f2'), ('sale-facts', 'pw_f3'),
+               ('settings', 'pw_f4'), ('toolbar-menu', 'pw_f5'), ('share-card', 'pw_f6')]
+
+
+def pw_feature(i):
+    name, k = pw_features[i]
+    src, sw, sh = pw_shot(name)
+    pts = points(w[k + '_pts']) if (k + '_pts') in T['en'] else ''
+    return f'''
+  <section class="feature wide{' flip' if i % 2 else ''}">
+    <div>
+      <h2>{w[k + '_h']}</h2>
+      <p>{w[k + '_p']}</p>
+      {pts}
+    </div>
+    <div class="shot-wrap wide"><img src="{a}{src}" width="{sw}" height="{sh}" loading="lazy" alt="{attr(w[k + '_alt'])}"></div>
+  </section>'''
+
+
+pw_faq = w['pw_faq']
+pw_faq_html = '\n'.join(f'    <details><summary>{q}</summary><p>{ans}</p></details>' for q, ans in pw_faq)
+page('en', 'prycehunt/', w['pw_title'], w['pw_desc'], f'''
+<section class="p-hero wrap">
+  <div>
+    <p class="title"><img src="{a}prycehunt-icon.png" width="44" height="44" alt="">{w['pw_for_chrome']}</p>
+    <h1>{w['pw_h1']}</h1>
+    <p class="lead">{w['pw_lead']}</p>
+    <div class="actions">
+      {pw_store_button(w)}
+      <a class="btn ghost" href="#features">{w['pw_btn_features']}</a>
+    </div>
+  </div>
+  <img class="hero-shot" src="{a}{pw_shot('comparison-box')[0]}" width="1280" height="800" alt="{attr(w['pw_f1_alt'])}">
+</section>
+
+<div class="wrap" id="features">{''.join(pw_feature(i) for i in range(len(pw_features)))}
+
+  <section class="promise">
+    <h2>{w['pw_promise_h']}</h2>
+    <p>{w['pw_promise_p']}</p>
+  </section>
+
+  <section class="feature-lists">
+    <div><h2>{w['pw_good_h']}</h2>{points(w['pw_good_pts'])}</div>
+    <div><h2>{w['pw_shops_h']}</h2><p>{w['pw_shops_p']}</p>
+         <h2 style="margin-top:28px">{w['pw_pricing_h']}</h2><p>{w['pw_pricing_p']}</p>
+         <div class="actions">{pw_store_button(w)}</div></div>
+  </section>
+
+  <section class="faq narrow" style="margin-left:0">
+    <h2>{w['faq_h']}</h2>
+{pw_faq_html}
+    <p class="fine" style="margin-top:20px">{w['faq_more']}</p>
+  </section>
+</div>
+''', nav='prycehunt', translated=False, og_image='og-prycehunt.jpg', jsonld={
+    '@context': 'https://schema.org',
+    '@graph': [org(w), {
+        '@type': 'SoftwareApplication', 'name': 'PryceHunt: price comparison for Indian stores',
+        'url': url_of('en', 'prycehunt/'), 'inLanguage': 'en',
+        'applicationCategory': 'ShoppingApplication', 'operatingSystem': 'Chrome or Edge on Windows, macOS, Linux and ChromeOS',
+        'description': w['pw_desc'], 'image': SITE + '/assets/og-prycehunt.jpg',
+        'screenshot': SITE + '/assets/' + pw_shot('comparison-box')[0].split('?')[0], 'publisher': {'@id': SITE + '/#org'},
+        'offers': {'@type': 'Offer', 'name': 'Free during launch', 'price': '0', 'priceCurrency': 'INR'},
+    }, {
+        '@type': 'FAQPage', 'inLanguage': 'en',
+        'mainEntity': [{'@type': 'Question', 'name': strip_tags(q),
+                        'acceptedAnswer': {'@type': 'Answer', 'text': strip_tags(ans)}} for q, ans in pw_faq],
+    }],
+})
+
+
+# ---------------------------------------------------------------------------
 # PRIVACY POLICY AND TERMS (English only, from the text files in content/)
 # ---------------------------------------------------------------------------
 def md_page(src, rel, title, description):
@@ -520,6 +646,7 @@ pages = {}
 for code, prefix in LANGUAGES:
     for rel in TRANSLATED_PAGES:
         pages[prefix + rel] = prefix + rel + 'index.html'
+pages['prycehunt/'] = 'prycehunt/index.html'
 pages['privacy/'] = 'privacy/index.html'
 pages['terms/'] = 'terms/index.html'
 with open(os.path.join(ROOT, 'sitemap.xml'), 'w') as f:

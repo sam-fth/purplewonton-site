@@ -1,5 +1,5 @@
 {
-  "_about": "English wording for every page. Each other language file has the same keys. Words in {curly brackets} are filled in by build.py (price, email address, links): keep them exactly as they are. Simple HTML tags like <strong>, <b> and <a> may appear and must be kept too.",
+  "_about": "English wording for every page. Each other language file has the same keys. Words in {curly brackets} are filled in by build.py (price, email address, links): keep them exactly as they are. Simple HTML tags like <strong>, <b> and <a> may appear and must be kept too. The PryceHunt keys (pw_...) exist in English only for now: other languages show the English words until they are translated.",
   "lang_name": "English",
   "locale": "en_US",
   "skip": "Skip to content",
@@ -14,7 +14,7 @@
   "store_add": "Add to Chrome, it's free",
   "pro_tag": "Pro",
   "home_title": "Purple Wonton: software, AI and automation, made in Bengaluru",
-  "home_desc": "Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our first product: DupTabOff for Chrome.",
+  "home_desc": "Purple Wonton is a technology studio in Bengaluru, India, building fast, private software, AI and automation products. Our products: DupTabOff and PryceHunt, both for Chrome.",
   "hero_h1": "Software, AI and automation, engineered with care.",
   "hero_lead": "Purple Wonton is a technology studio in Bengaluru. We design and build modern software products that take repetitive work off your hands: fast, private by design, and tested in real browsers before they reach you.",
   "btn_products": "See our products",
@@ -187,5 +187,103 @@
   "s_back_p": "Chrome itself can reopen recently closed tabs: press Ctrl+Shift+T (Cmd+Shift+T on Mac). With Pro, DupTabOff's Undo button brings back a whole batch in the windows they came from.",
   "s_common_h": "Common questions",
   "s_common_p": "See the <a href=\"{pricing_url}\">Free vs Lifetime Pro</a> comparison and the questions at the bottom of the <a href=\"{dt_url}\">DupTabOff page</a>.",
-  "s_lang_note": ""
+  "s_lang_note": "",
+  "pw_kind": "Chrome and Edge extension",
+  "pw_pitch": "Looking at a product and wondering whether another store sells it for less? PryceHunt shows the price at other Indian stores right on the page, with price history and honest facts about sales. No account, no ads, no tracking.",
+  "pw_price": "Free during launch",
+  "pw_shot_alt": "PryceHunt's comparison box on a product page, with a cheaper price found at another store",
+  "pw_title": "PryceHunt: compare prices across Indian stores | Purple Wonton",
+  "pw_desc": "PryceHunt is a Chrome and Edge extension that shows what the product you are viewing costs at other Indian stores, with price history, honest sale facts and price-drop alerts. No account, no ads, no tracking.",
+  "pw_for_chrome": "PryceHunt for Chrome and Edge",
+  "pw_h1": "Compare prices across Indian stores, right on the page",
+  "pw_lead": "PryceHunt shows what the product you are looking at costs at other stores, how its price has moved, and whether that big discount is real. No account, no ads, no tracking: your pincode, settings and watch-list stay in your browser.",
+  "pw_btn_features": "See what it does",
+  "pw_f1_h": "See other stores' prices without leaving the page",
+  "pw_f1_p": "A small box under the price opens the comparison. Switch on “Show the price here instead of a link” and PryceHunt shows the other store's price in the box, marked “likely the same product” or “similar: check details”. You can switch that on or off right there.",
+  "pw_f1_pts": [
+    "Live prices today for Amazon.in and Flipkart; the other stores open their own search",
+    "The cheapest store found is called out, and you can list the lowest price first",
+    "Quick-delivery apps are included, with prices per 100 g, per 100 ml or per piece"
+  ],
+  "pw_f1_alt": "PryceHunt's comparison box on a product page, showing a cheaper price at another store",
+  "pw_f2_h": "A Compare button on every product",
+  "pw_f2_p": "On search, category and home pages, and on the similar items of a product page, every product gets a small “Compare prices” button. Nothing is fetched until you press one.",
+  "pw_f2_pts": [
+    "Amazon.in, Flipkart, Meesho, Myntra, Ajio and Croma",
+    "Blinkit, Zepto, BigBasket and Swiggy Instamart",
+    "Pause it for 30 minutes to 23 hours, on one site or on all sites"
+  ],
+  "pw_f2_alt": "A search results page where every product has a small Compare prices button, and one comparison is open",
+  "pw_f3_h": "Price history and honest sale facts",
+  "pw_f3_p": "PryceHunt remembers the prices you have seen and charts them. It shows the lowest price seen, checks a “70% off” claim against what the product has usually cost, and during big sales such as Diwali tells you what the product cost before the sale began.",
+  "pw_f3_pts": [
+    "No verdict and no pressure: it states the facts and you decide",
+    "Sale dates are the usual timing, because shops announce theirs late; you can choose the seasons to follow and add your own",
+    "Optional shared history, built from prices other people chose to share anonymously"
+  ],
+  "pw_f3_alt": "PryceHunt's price history chart, the check of a 70 percent off claim and the price before a sale",
+  "pw_f4_h": "Your choices, in clear settings",
+  "pw_f4_p": "Everything that contacts anything is off until you switch it on, and each setting says what is sent. Choose your stores and their order, where the box appears, and how it behaves.",
+  "pw_f4_pts": [
+    "No account to make",
+    "Live prices, alerts, price sharing and Telegram are separate switches",
+    "Erase everything with one button"
+  ],
+  "pw_f4_alt": "PryceHunt's settings page, divided into General, Stores, Prices and alerts, and Privacy and data",
+  "pw_f5_h": "Pause, watch and get alerts",
+  "pw_f5_p": "The toolbar menu pauses PryceHunt for a while, keeps your watch-list and lets you set your pincode. Set an alert price or range for a product, choose which sites to watch during a sale, and get a notification when it drops.",
+  "pw_f5_pts": [
+    "Alerts are checked while your browser is open. Some stores, such as Amazon.in, do not allow automatic checks, so those prices update when you open the product",
+    "Optional alerts on Telegram, to reach your phone"
+  ],
+  "pw_f5_alt": "PryceHunt's toolbar menu, with pause, the watch-list and a pincode box",
+  "pw_f6_h": "Share a comparison with family and friends",
+  "pw_f6_p": "Pressing Share makes a picture and a short message of the comparison, ready for WhatsApp or Telegram. It contains the product and prices only, nothing about you.",
+  "pw_f6_alt": "A PryceHunt share card comparing the price of a phone at three stores",
+  "pw_promise_h": "Private by design",
+  "pw_promise_p": "PryceHunt has no accounts, no advertising, no analytics and no tracking, and we never sell data. Your settings, pincode, watch-list and price history stay in your browser. A few optional features send limited information to our price server or to other services; each one is off until you switch it on, and the settings say exactly what is sent.",
+  "pw_good_h": "Good to know",
+  "pw_good_pts": [
+    "Products are matched by name, so a match can be wrong. Always check the details before you buy, and flag a wrong match or price.",
+    "When you click “Go to this store”, PryceHunt may add an affiliate link that earns us a commission at no cost to you, and it says so next to the button.",
+    "PryceHunt is independent and is not affiliated with any store or with Telegram."
+  ],
+  "pw_shops_h": "Works on",
+  "pw_shops_p": "Amazon.in, Flipkart, Meesho, Myntra, Ajio, Croma, Blinkit, Zepto, BigBasket and Swiggy Instamart. More Indian stores are added over time.",
+  "pw_pricing_h": "Free during launch",
+  "pw_pricing_p": "PryceHunt is free while it is being launched. If a paid plan with higher limits is introduced later, we will say so well before anything changes.",
+  "pw_faq": [
+    [
+      "Is PryceHunt free?",
+      "Yes, while it is being launched. If a paid plan with higher limits comes later, we will tell you well before anything changes."
+    ],
+    [
+      "Which browsers does it work in?",
+      "Chrome and Edge on a computer. Other browsers may come later."
+    ],
+    [
+      "Do I need an account?",
+      "No. You never sign in, and your settings stay in your browser."
+    ],
+    [
+      "How accurate are the matches?",
+      "PryceHunt matches products by name, so it can be wrong: a different size, colour or model can look the same. It labels each match as “likely the same product” or “similar: check details”, and you can flag a wrong match or price."
+    ],
+    [
+      "Does PryceHunt see what I browse?",
+      "On the shopping sites it works on, it reads the product name and price on the page you are viewing, on your computer. It sends nothing by itself. A few optional features send limited information, each only after you switch it on."
+    ],
+    [
+      "Why can't alerts arrive while my browser is closed?",
+      "The price checks run in your browser, so they need it open. You can also let PryceHunt watch for you while the browser is closed, using prices that other people chose to share, and receive alerts on Telegram; this can miss some drops."
+    ],
+    [
+      "Does PryceHunt earn money from my purchases?",
+      "It may. When you click “Go to this store” and the store is cheaper or has an offer, PryceHunt may open an affiliate link that earns us a commission at no cost to you. It says so next to the button, and the link is added only when you click."
+    ],
+    [
+      "How do I get in touch?",
+      "Write to {email_link}."
+    ]
+  ]
 }
